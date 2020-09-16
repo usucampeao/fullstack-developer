@@ -1,0 +1,29 @@
+<mat-toolbar color="primary" class="app-header" fxLayout="row" fxLayoutAlign="center center">
+  <div class="header-wrapper" fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="logo-header">
+      <a [routerLink]="['/']" class="positronx">
+        <img src="../assets/images/white-logo.png">
+      </a>
+    </div>
+
+    <div class="menu-wrapper">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="properties/new" routerLinkActive="active">
+          <mat-icon>add_comment</mat-icon>
+          <span>Anunciar imóvel</span>
+        </button>
+        <button mat-menu-item routerLink="properties/search" routerLinkActive="active">
+          <mat-icon>search</mat-icon>
+          <span>Procurar</span>
+        </button>
+        <button mat-menu-item routerLink="properties/favorites" routerLinkActive="active">
+          <mat-icon>favorite</mat-icon>
+          <span>Meus favoritos</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+</mat-toolbar>

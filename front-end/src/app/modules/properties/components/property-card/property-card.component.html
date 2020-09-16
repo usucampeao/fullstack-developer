@@ -1,0 +1,13 @@
+<div class="property-card">
+  <img src="../../../../../assets//images//house.jpg">
+  <span class="property-title">
+    {{ property.titulo }}
+  </span>
+  <span class="property-price">
+    {{ property.valor | currency:'BRL':'R$' }}
+  </span>
+  <a mat-flat-button color="primary" [routerLink]="['/','properties','details', property.id]" routerLinkActive="active">
+    <mat-icon>info</mat-icon>
+    <span>Gostou? Clique aqui para saber mais</span>
+  </a>
+</div>

@@ -1,0 +1,58 @@
+<mat-card class="layout-card layout-card-with-actions">
+  <mat-card-header fxLayoutAlign="space-between">
+    <div mat-card-avatar class="avatar">
+      <mat-icon>house</mat-icon>
+    </div>
+    <div fxFlex="grow">
+      <mat-card-title>Detalhes do imóvel</mat-card-title>
+      <mat-card-subtitle>Veja mais informações do imóvel</mat-card-subtitle>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div *ngIf="!processing" class="content">
+
+      <div *ngIf="property" class="property-wrapper">
+
+        <div class="image-wrapper">
+          <img src="../../../../../assets/images/house.jpg">
+        </div>
+
+        <div class="property-info-wrapper">
+          <button *ngIf="!isFavorite" (click)="saveFavorite()" mat-flat-button color="primary">
+            <mat-icon>favorite</mat-icon>&nbsp;
+            <span>Salvar nos favoritos</span>
+          </button>
+
+          <span class="property-title">
+            {{ property.titulo }}
+          </span>
+
+          <span class="property-price">
+            {{ property.valor | currency:'BRL':'R$' }}
+          </span>
+
+          <span class="property-description">
+            {{ property.descricao }}
+          </span>
+
+          <span class="property-area">
+            <strong>Área:</strong> {{ property.area }} m²
+          </span>
+
+          <span class="property-address">
+            {{ property.endereco.logradouro }}, {{ property.endereco.bairro }}<br>
+            {{ property.endereco.cidade }} - {{ property.endereco.estado }}<br>
+            {{ property.endereco.cep }}
+          </span>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div *ngIf="processing" class="process">
+      <mat-progress-spinner style="margin:0 auto;" mode="indeterminate"></mat-progress-spinner>
+    </div>
+  </mat-card-content>
+</mat-card>

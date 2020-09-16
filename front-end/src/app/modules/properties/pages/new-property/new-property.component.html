@@ -1,0 +1,136 @@
+<mat-card class="layout-card layout-card-with-actions">
+  <mat-card-header fxLayoutAlign="space-between">
+    <div mat-card-avatar class="avatar">
+      <mat-icon>add_comment</mat-icon>
+    </div>
+    <div fxFlex="grow">
+      <mat-card-title>Anunciar imóvel</mat-card-title>
+      <mat-card-subtitle>Informe os dados do seu imóvel</mat-card-subtitle>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form *ngIf="!processing" [formGroup]="form" (ngSubmit)="submitForm()" class="form">
+      <mat-card-content>
+
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            formControlName="title"
+            placeholder="Título">
+          <mat-error *ngIf="form.controls['title'].hasError('required')">
+            Título é <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            formControlName="description"
+            placeholder="Descrição">
+          <mat-error *ngIf="form.controls['description'].hasError('required')">
+            Descrição é <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            formControlName="area"
+            placeholder="Área"
+            type="number">
+          <mat-error *ngIf="form.controls['area'].hasError('required')">
+            Área é <strong>requerida</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            formControlName="value"
+            placeholder="Valor"
+            type="number">
+          <mat-error *ngIf="form.controls['value'].hasError('required')">
+            Valor é <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            formControlName="address"
+            placeholder="Logradouro">
+          <mat-error *ngIf="form.controls['address'].hasError('required')">
+            Logradouro é <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            formControlName="address_number"
+            placeholder="Número">
+          <mat-error *ngIf="form.controls['address_number'].hasError('required')">
+            Número é <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            formControlName="address_complement"
+            placeholder="Complemento">
+          <mat-error *ngIf="form.controls['address_complement'].hasError('required')">
+            Complemento é <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            formControlName="address_district"
+            placeholder="Bairro">
+          <mat-error *ngIf="form.controls['address_district'].hasError('required')">
+            Bairro é <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            formControlName="address_zipcode"
+            placeholder="CEP">
+          <mat-error *ngIf="form.controls['address_zipcode'].hasError('required')">
+            CEP é <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            formControlName="address_city"
+            placeholder="Cidade">
+          <mat-error *ngIf="form.controls['address_city'].hasError('required')">
+            Cidade é <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            formControlName="address_state"
+            placeholder="Estado">
+          <mat-error *ngIf="form.controls['address_state'].hasError('required')">
+            Estado é <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+
+      </mat-card-content>
+      <button [disabled]="form.invalid" mat-stroked-button class="btn-block">Salvar</button>
+    </form>
+
+    <div *ngIf="processing" class="process">
+      <mat-progress-spinner style="margin:0 auto;" mode="indeterminate"></mat-progress-spinner>
+    </div>
+  </mat-card-content>
+</mat-card>

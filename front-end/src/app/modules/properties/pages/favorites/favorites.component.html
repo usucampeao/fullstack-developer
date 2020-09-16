@@ -1,0 +1,32 @@
+<mat-card class="layout-card layout-card-with-actions">
+  <mat-card-header fxLayoutAlign="space-between">
+    <div mat-card-avatar class="avatar">
+      <mat-icon>favorite</mat-icon>
+    </div>
+    <div fxFlex="grow">
+      <mat-card-title>Favoritos</mat-card-title>
+      <mat-card-subtitle>Veja os imovéis favoritos</mat-card-subtitle>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div *ngIf="!processing" class="content">
+
+      <div *ngIf="properties?.length > 0" class="properties">
+
+      <app-property-card
+       *ngFor="let item of properties"
+        [property]="item"></app-property-card>
+      </div>
+
+      <div *ngIf="!properties || properties.length === 0" class="no-properties">
+        Nenhum imóvel salvo nos seus favoritos
+      </div>
+
+    </div>
+
+    <div *ngIf="processing" class="process">
+      <mat-progress-spinner style="margin:0 auto;" mode="indeterminate"></mat-progress-spinner>
+    </div>
+  </mat-card-content>
+</mat-card>
