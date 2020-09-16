@@ -2,6 +2,10 @@
 
 Node.JS com Express e TypeScript para um projeto de API
 
+# Instalar dependências
+
+Executar `yarn`
+
 ## Testes
 
 Executar `yarn test`
