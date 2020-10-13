@@ -1,0 +1,176 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>opens-api documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">opens-api documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="requisitos-de-sistema">Requisitos de Sistema</h1>
+<ul>
+<li>Node</li>
+<li>Npm</li>
+<li>Docker * <i>(somente se não possuir o mongodb)</i></li>
+</ul>
+<h3 id="instalação-npm-e-node">Instalação NPM e Node</h3>
+<div><pre class="line-numbers"><code class="language-none">sudo apt-get update
+sudo apt install npm
+sudo apt-get install git-core curl build-essential openssl libssl-dev
+
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n latest</code></pre></div><h3 id="instalação-docker">Instalação Docker</h3>
+<p><a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">https://docs.docker.com/install/linux/docker-ce/ubuntu/</a></p>
+<div><pre class="line-numbers"><code class="language-none">sudo apt-get install  curl apt-transport-https ca-certificates software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot;
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io docker-compose</code></pre></div><h3 id="visualizar-documentação">Visualizar documentação</h3>
+<div><pre class="line-numbers"><code class="language-none">npm run start:doc</code></pre></div><h1 id="configurações">Configurações</h1>
+<h2 id="env">.env</h2>
+<ul>
+<li>DEFAULT_SECRET é jwt secret para o User credentials</li>
+<li>MASTER_SECRET é jwt secret para o Master Token<div><pre class="line-numbers"><code class="language-none">MONGO_URL=mongodb://localhost:27018/opensapi
+MONGO_USER=root
+MONGO_PASS=opens
+MONGO_SCHEMA=admin
+DEFAULT_SECRET=opensapi_secret
+MASTER_SECRET=opensapi_master_secret</code></pre></div></li>
+</ul>
+<h2 id="executando">Executando</h2>
+<p>Execute o docker-compose para criar as imagens e containers das imagens do MongoExpress e MongoDB:</p>
+<div><pre class="line-numbers"><code class="language-none">sudo docker-compose up -d</code></pre></div><p>Testar as conexões do MongoDB:</p>
+<div><pre class="line-numbers"><code class="language-none">mongo --port 27018 -u root -p opens -authenticationDatabase admin</code></pre></div><p>Insira o usuário master no sistema, responsável por criar e deletar usuários:</p>
+<div><pre class="line-numbers"><code class="language-none">use opensapi
+db.user.insert({&quot;isMaster&quot; : true, &quot;login&quot; : &quot;master&quot;, &quot;name&quot; : &quot;master&quot;, &quot;email&quot; : &quot;master&#64;master.com&quot;, &quot;password&quot; : &quot;$2b$10$TLQH.vtlYQUfVX8EhpfYhegZA2J6Q1VV6u3m.jj7oR../JlXjfppK&quot;, &quot;__v&quot; : 0 })</code></pre></div><p>Finalmente, instale as dependências npm install e execute a aplicação npm run start e faça a autenticação em POST:<a href="http://localhost:3000/auth">http://localhost:3000/auth</a> com body</p>
+<div><pre class="line-numbers"><code class="language-json">{ 
+    &quot;email&quot;:&quot;master&#64;master.com&quot;,
+    &quot;password: &quot;123456&quot;
+}</code></pre></div><p>Resgate o token retornado da autenticação e utilize nos endpoints com autenticação Bearer:</p>
+<ul>
+<li>POST: <a href="http://localhost:3000/user">http://localhost:3000/user</a>  </li>
+<li><ul>
+<li>BODY:<div><pre class="line-numbers"><code class="language-json">{
+&quot;login&quot;:&quot;teste&quot;,
+&quot;name&quot;:&quot;teste&quot;,
+&quot;email&quot;:&quot;teste&#64;teste.com&quot;,
+&quot;password&quot;:&quot;123456&quot;
+}</code></pre></div></li>
+</ul>
+</li>
+<li>DEL: <a href="http://localhost:3000/user/:id">http://localhost:3000/user/:id</a></li>
+</ul>
+<p>Para usuário simples, utilizar:</p>
+<ul>
+<li>PUT: <a href="http://localhost:3000/user/:id">http://localhost:3000/user/:id</a>  </li>
+<li><ul>
+<li>BODY:<div><pre class="line-numbers"><code class="language-json">{
+&quot;login&quot;:&quot;testador&quot;,
+&quot;name&quot;:&quot;testador&quot;,
+&quot;email&quot;:&quot;teste&#64;teste.com&quot;,
+&quot;password&quot;:&quot;123456&quot;
+}</code></pre></div></li>
+</ul>
+</li>
+<li>GET:<a href="http://localhost:3000/user/:id">http://localhost:3000/user/:id</a></li>
+</ul>
+<h2 id="acessar-dados-via-mongoexpress">Acessar dados via MongoExpress</h2>
+<p>Testar mongoExpress (usuario express, senha opens):</p>
+<div><pre class="line-numbers"><code class="language-none">http://localhost:8081</code></pre></div><h2 id="docker-tests">Docker tests</h2>
+<p>Listando containers ativos</p>
+<div><pre class="line-numbers"><code class="language-none">sudo docker container ls</code></pre></div><p>Parando container</p>
+<div><pre class="line-numbers"><code class="language-none">sudo docker stop &lt;container_id&gt;</code></pre></div><p>Listando imagens docker</p>
+<div><pre class="line-numbers"><code class="language-none">sudo docker images -a</code></pre></div><p>Removendo uma imagem docker</p>
+<div><pre class="line-numbers"><code class="language-none">sudo docker rmi &lt;image_id&gt; -f</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
