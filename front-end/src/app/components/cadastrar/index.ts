@@ -1,0 +1,1 @@
+export * from './imovel/cadastrar-imovel.component';

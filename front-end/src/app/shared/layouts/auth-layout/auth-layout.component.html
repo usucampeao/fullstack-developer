@@ -1,0 +1,19 @@
+<div id="auth-wrapper">
+    <mat-toolbar style="background: #fd8405; color: white;">
+        <!-- toolbar options -->
+        <img src="../../../../assets/images/usucampeao.png" alt="" style="height:2.5rem; margin:0 auto;">
+        <app-toolbar [showAccount]="false" [showMenu]="false" [showLogout]="false"></app-toolbar>
+    </mat-toolbar>
+
+    <div class="auth-content">
+        <div class="auth-card-wrapper">
+            <div class="auth-card-container">
+                <router-outlet>
+                    <!-- Add Content Here -->
+                    <ng-content></ng-content>
+                </router-outlet>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,57 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Consultar imóveis</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <mat-form-field appearance="outline">
+            <mat-icon matPrefix>search</mat-icon>
+            <mat-label>Pesquisar</mat-label>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Digite um nome para filtrar">
+        </mat-form-field>
+
+        <mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="titulo">
+                <mat-header-cell *matHeaderCellDef> Titulo </mat-header-cell>
+                <mat-cell *matCellDef="let imovel"> {{imovel.titulo}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="valor">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Valor </mat-header-cell>
+                <mat-cell *matCellDef="let imovel"> R$ {{imovel.valor}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="localidade">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Cidade </mat-header-cell>
+                <mat-cell *matCellDef="let imovel"> {{imovel.localidade}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="bairro">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Bairro </mat-header-cell>
+                <mat-cell *matCellDef="let imovel"> {{imovel.bairro}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef>
+                    Ação
+                </mat-header-cell>
+
+                <mat-cell *matCellDef="let imovel">
+                    <button mat-icon-button>
+                    <mat-icon [routerLink]="['/cadastrar/imovel', imovel._id]" (click)="edit(imovel._id)">edit</mat-icon>
+                    </button>
+
+                    <button mat-icon-button>
+                        <mat-icon (click)="delete(imovel)">delete</mat-icon>
+                    </button>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+
+        <mat-paginator [pageSizeOptions]="[10, 50]" showFirstLastButtons></mat-paginator>
+
+    </mat-card-content>
+</mat-card>

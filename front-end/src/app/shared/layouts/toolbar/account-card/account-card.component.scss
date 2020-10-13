@@ -1,0 +1,11 @@
+div[mat-card-avatar] {
+    background-color: #aaaaaa;
+    transform: scale(1.15);
+    margin-top: 4px;
+
+    &.account-header-image {
+        background-size: cover;
+        background-position: center;
+        // background-image: url( // TODO foto perfil );
+    }
+}

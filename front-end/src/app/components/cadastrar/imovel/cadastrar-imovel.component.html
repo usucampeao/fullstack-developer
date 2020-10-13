@@ -1,0 +1,114 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Cadastro de imóveis</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <form [formGroup]="formulario">
+            <mat-form-field appearance="outline">
+                <mat-label>Título</mat-label>
+                <input matInput formControlName="titulo" [errorStateMatcher]="matcher" placeholder="Digite o nome do título">
+                <!-- <mat-hint>Hint</mat-hint> -->
+                <mat-error *ngIf="formulario.get('titulo').hasError('required')">
+                    O nome do título é <strong>obrigatório</strong>.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Descrição</mat-label>
+                <input matInput formControlName="descricao" [errorStateMatcher]="matcher" placeholder="Digite uma descrição">
+                <!-- <mat-hint>Hint</mat-hint> -->
+                <mat-error *ngIf="formulario.get('descricao').hasError('required')">
+                    A descrição é <strong>obrigatória</strong>.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Valor</mat-label>
+                <input matInput formControlName="valor" [errorStateMatcher]="matcher" placeholder="Digite o valor" type="number">
+                <!-- <mat-hint>Hint</mat-hint> -->
+                <mat-error *ngIf="formulario.get('valor').hasError('required')">
+                    O valor é <strong>obrigatório</strong>.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Área</mat-label>
+                <input matInput formControlName="area" [errorStateMatcher]="matcher" placeholder="Digite área">
+                <!-- <mat-hint>Hint</mat-hint> -->
+                <mat-error *ngIf="formulario.get('area').hasError('required')">
+                    A área é <strong>obrigatória</strong>.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>CEP</mat-label>
+                <input matInput formControlName="cep" [errorStateMatcher]="matcher" placeholder="Digite o CEP" type="number" maxlength="8" (focusout)="getLocal($event)">
+                <!-- <mat-hint>Hint</mat-hint> -->
+                <mat-error *ngIf="formulario.get('cep').hasError('required')">
+                    O CEP é <strong>obrigatório</strong>.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Endereço</mat-label>
+                <input matInput formControlName="logradouro" [errorStateMatcher]="matcher" placeholder="Digite o endereço">
+                <!-- <mat-hint>Hint</mat-hint> -->
+                <mat-error *ngIf="formulario.get('logradouro').hasError('required')">
+                    O endereço é <strong>obrigatório</strong>.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Complemento</mat-label>
+                <input matInput formControlName="complemento" [errorStateMatcher]="matcher" placeholder="Digite o complemento">
+                <!-- <mat-hint>Hint</mat-hint> -->
+                <mat-error *ngIf="formulario.get('complemento').hasError('required')">
+                    O complemento é <strong>obrigatório</strong>.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Número</mat-label>
+                <input matInput formControlName="numero" [errorStateMatcher]="matcher" placeholder="Digite o número" type="number">
+                <!-- <mat-hint>Hint</mat-hint> -->
+                <mat-error *ngIf="formulario.get('numero').hasError('required')">
+                    O número é <strong>obrigatório</strong>.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Bairro</mat-label>
+                <input matInput formControlName="bairro" [errorStateMatcher]="matcher" placeholder="Digite o bairro">
+                <!-- <mat-hint>Hint</mat-hint> -->
+                <mat-error *ngIf="formulario.get('bairro').hasError('required')">
+                    O bairro é <strong>obrigatório</strong>.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Cidade</mat-label>
+                <input matInput formControlName="localidade" [errorStateMatcher]="matcher" placeholder="Digite a cidade">
+                <!-- <mat-hint>Hint</mat-hint> -->
+                <mat-error *ngIf="formulario.get('localidade').hasError('required')">
+                    A cidade é <strong>obrigatória</strong>.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Estado</mat-label>
+                <input matInput formControlName="uf" [errorStateMatcher]="matcher" placeholder="Digite o estado">
+                <!-- <mat-hint>Hint</mat-hint> -->
+                <mat-error *ngIf="formulario.get('uf').hasError('required')">
+                    O estado é <strong>obrigatório</strong>.
+                </mat-error>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-flat-button (click)="submitForm()" [disabled]="!formulario.valid">
+            <span class="material-icons">save</span>{{ id ? 'Salvar alterações' : 'Gravar' }}
+        </button>
+    </mat-card-actions>
+</mat-card>

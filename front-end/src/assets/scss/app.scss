@@ -1,0 +1,60 @@
+// Material
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Import material icons
+// from: https://jossef.github.io/material-design-icons-iconfont/
+@import 'material-design-icons-iconfont/dist/material-design-icons.css';
+
+// Import material styles
+@import '@material/layout-grid/dist/mdc.layout-grid.min.css';
+
+/**
+ * START themes
+ */
+
+// import default theme
+@import './themes/default.scss';
+@import './themes/minimal-light.scss';
+@import './themes/minimal-dark.scss';
+
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+@include mat-base-typography($minimal-custom-typography);
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($minimal-custom-typography);
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($minimal-custom-typography);
+
+// Include a default theme at start
+@include angular-material-theme($default-theme);
+
+.default-theme {
+    @include angular-material-theme($default-theme);
+}
+
+.minimal-light-theme {
+    @include angular-material-theme($minimal-light-theme);
+}
+
+.minimal-dark-theme {
+    @include angular-material-theme($minimal-dark-theme);
+}
+
+// END themes
+
+// Import beauty scrollbar
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+
+// Import Lato Font
+@import './fonts.scss';
+
+// Own styles
+@import './main.scss';
+@import './login.scss';
+@import './spinner.scss';
+@import './responsive.scss';

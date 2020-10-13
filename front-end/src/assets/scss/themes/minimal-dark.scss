@@ -1,0 +1,151 @@
+// Variables
+$available-fonts: Lato,
+Roboto,
+'Helvetica',
+'Arial',
+sans-serif;
+$app-theme-name: 'dark';
+
+/**
+ * Overwrite default theming
+ */
+@import '../colors.scss';
+
+.minimal-dark-theme {
+    mat-sidenav {
+        border-right: none !important;
+        box-shadow: map-get($app-sidevar-side, $app-theme-name);
+    }
+
+    // TABS
+    .mat-tab-group {
+        box-shadow: none !important;
+
+        .mat-tab-header {
+            position: sticky;
+            top: 0;
+            z-index: 9;
+            background-color: #3c3c3c;
+            box-shadow: 0 2px 12px -6px #000000;
+        }
+    }
+
+    .mat-tooltip {
+        font-size: .85rem;
+    }
+
+    .mat-tab-label {
+        height: 64px !important;
+        font-size: 1rem;
+
+        &.mat-tab-label-active {
+            font-weight: 600;
+        }
+    }
+
+    mat-header-cell {
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+    }
+
+    .mat-menu-content {
+        padding: 0 !important;
+
+        .mat-nav-list {
+            padding: 0 !important;
+        }
+    }
+
+    .angular-editor-wrapper {
+        color: black;
+    }
+
+    mat-accordion {
+        &.navigation {
+            mat-expansion-panel {
+                border-bottom: 1px solid mat-color(mat-palette($mat-grey), default, 0.33);
+
+                mat-expansion-panel-header {
+                    &.mat-expanded {
+                        background-color: mat-color(mat-palette($mat-light-blue), default, 0.85);
+
+                        mat-panel-title {
+                            color: white;
+                        }
+
+                        mat-panel-description {
+                            color: white;
+                        }
+                    }
+                }
+
+                .mat-expansion-panel-body {
+                    background-color: map-get($app-tab-header, $app-theme-name);
+
+                    mat-list {
+                        mat-list-item {
+                            &.active {
+                                color: #222;
+                                background-color: mat-color(mat-palette($mat-grey), default, 0.8);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// End Overwrite
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$minimal-dark-primary: mat-palette($mat-light-blue);
+$minimal-dark-accent: mat-palette($mat-dark-accent);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$minimal-dark-theme: mat-dark-theme($minimal-dark-primary, $minimal-dark-accent);
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$minimal-custom-typography: mat-typography-config($font-family: $available-fonts,
+$headline: mat-typography-level(1.33rem, 1.5rem, 700),
+$body-1: mat-typography-level(1rem, 1.15rem, 500));
+
+/**
+  * Overwrite main styles
+  */
+.minimal-dark-theme {
+
+    div.tab-group {
+        padding: 0 !important;
+
+        h2 {
+            display: none;
+        }
+
+        mat-header-row {
+            background-color: map-get($app-tab-header, $app-theme-name);
+        }
+
+        section {
+            background-color: map-get($app-tab-section, $app-theme-name);
+        }
+    }
+
+    #main-footer {
+        border-top: 1px solid rgba(black, 0.12);
+        background-color: map-get($app-footer, $app-theme-name);
+    }
+
+    // change color of buttons selects (like current language)
+    button.mat-menu-item {
+
+        &.selected,
+        &.selected:hover {
+            color: white;
+            background-color: mat-color(mat-palette($mat-light-blue), default, 0.85);
+        }
+    }
+}

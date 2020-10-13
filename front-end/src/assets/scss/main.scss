@@ -1,0 +1,291 @@
+html,
+body {
+    font-family: $available-fonts;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+#main-content-wrapper {
+    height: calc(100% - 58px);
+}
+
+#main-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 16px 0;
+
+    div {
+        padding: 0 24px;
+    }
+}
+
+// Global Overwrite Material design
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    width: 260px;
+}
+
+mat-sidenav-content {
+    overflow: hidden !important;
+}
+
+mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+mat-nav-list {
+    margin-top: 16px;
+}
+
+app-toolbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    #toolbar-options {
+        display: flex;
+        align-items: center;
+
+        div {
+            display: inline-block;
+        }
+
+        button {
+            font-size: 1.1rem;
+            font-weight: 200;
+
+            mat-icon {
+                font-size: 1.6rem;
+                padding-right: 8px;
+            }
+        }
+    }
+}
+
+// Sidenav accordion
+mat-accordion {
+    &.navigation {
+        mat-expansion-panel {
+            border-radius: 0 !important;
+
+            &:first-of-type {
+                border-radius: 0;
+            }
+
+            &.mat-expansion-panel-spacing {
+                margin: 0;
+            }
+
+            mat-expansion-panel-header {
+                padding: 4px 24px;
+
+                &.mat-expanded {
+                    max-height: 50px;
+                    border-radius: 0;
+                }
+
+                span {
+                    align-items: center;
+
+                    .mat-expansion-panel-header-description,
+                    .mat-expansion-panel-header-title {
+                        flex-grow: 0;
+                    }
+                }
+
+                mat-panel-description {
+                    font-size: 1rem;
+                }
+
+            }
+
+            .mat-expansion-panel-body {
+                padding: 0;
+                border-radius: 0;
+
+                mat-list {
+                    padding-bottom: 8px;
+
+                    mat-list-item {
+                        .mat-list-item-content {
+                            padding-left: 64px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .mat-expansion-panel:not([class*='mat-elevation-z']) {
+            box-shadow: none;
+        }
+    }
+}
+
+/**
+ * Common options
+ */
+div.options-wrapper {
+    margin-bottom: 8px;
+
+    mat-form-field.filter {
+        width: 50%;
+        margin-left: 15px;
+
+        mat-icon {
+            font-size: 2.2rem;
+        }
+    }
+
+    div.actions {
+        margin-top: 4px;
+        float: right;
+
+        button[mat-button] {
+            line-height: 3rem;
+
+            mat-icon {
+                width: auto;
+                font-size: 2rem;
+                line-height: 1.5rem;
+            }
+        }
+    }
+}
+
+button.mat-menu-item {
+
+    &.selected,
+    &.selected:hover {
+        color: white;
+        background-color: mat-color(mat-palette($mat-light-blue), default, 0.85);
+    }
+}
+
+/**
+ * Common tabs
+ */
+div.tab-group {
+    padding: 24px 36px 36px;
+
+    h2 {
+        font-weight: 400;
+        margin-top: 0;
+    }
+
+    mat-tab-group {
+        border-radius: 4px;
+
+        div.footer {
+            display: flex;
+            padding: 16px 32px;
+
+            .fill-space {
+                // This fills the remaining space, by using flexbox.
+                // Every toolbar row uses a flexbox row layout.
+                flex: 1 1 auto;
+            }
+        }
+    }
+
+    section {
+        border-radius: 5px;
+
+        &>div {
+            padding: 12px 32px 24px;
+        }
+    }
+}
+
+#breadcrumb-wrapper {
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
+
+    .breadcrumb {
+        display: flex;
+        font-size: 1rem;
+
+        &>div,
+        mat-icon {
+            padding-right: 8px;
+        }
+
+        span,
+        mat-icon {
+            vertical-align: middle;
+        }
+    }
+}
+
+/**
+ * Overwrite perfect scroll
+ */
+.ps__rail-y,
+.ps__rail-x {
+    z-index: 999;
+}
+
+// Common classes
+.block {
+    display: block !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+mat-icon {
+    &.x2 {
+        font-size: 2rem;
+    }
+
+    &.x3 {
+        font-size: 2.5rem;
+    }
+
+    &.x4 {
+        font-size: 3.5rem;
+    }
+
+    &.x5 {
+        font-size: 4rem;
+    }
+
+    &.x6 {
+        font-size: 5rem;
+    }
+}
+
+// Efects
+.animation-spin {
+    -webkit-animation: spin 1.15s linear infinite;
+    -moz-animation: spin 1.15s linear infinite;
+    animation: spin 1.15s linear infinite;
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}

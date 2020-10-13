@@ -1,0 +1,25 @@
+<!-- toogle sidenav -->
+<div id="toolbar-menu">
+    <div *ngIf="sidenav && toggleMenu$">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="onToggleMenu()">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+    </div>
+</div>
+
+<div id="toolbar-options">
+    <div *ngIf="showAccount" id="toolbar-user">
+        <app-account-card></app-account-card>
+    </div>
+
+    <div *ngIf="showMenu" id="toolbar-menu">
+        <app-menu-dropdown></app-menu-dropdown>
+    </div>
+
+    <div *ngIf="showLogout" id="toolbar-logout">
+        <button mat-button class="button" (click)="openLogoutDialog()">
+            <mat-icon aria-label="main toolbar logout icon">power_settings_new</mat-icon>
+            <span class="name">Logout</span>
+        </button>        
+    </div>
+</div>

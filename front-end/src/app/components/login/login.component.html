@@ -1,0 +1,42 @@
+<form id="login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2>Log In</h2>
+    <section class="fields">
+        <div>
+            <mat-form-field>
+                <input matInput type="text" formControlName="email" placeholder="Email" aria-label="Username">
+                <mat-error class="error-message" *ngIf="loginForm.get('email').invalid">
+                    <span *ngIf="loginForm.get('email').hasError('required')">Obrigatório</span>
+                    <span *ngIf="loginForm.get('email').hasError('email')">Deve ser um email válido</span>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Password" formControlName="password" [type]="hidePassword ? 'password' : 'text'">
+                <mat-icon matSuffix (click)="hidePassword = !hidePassword" class="pointer">{{hidePassword ?
+                    'visibility_off' :
+                    'visibility'}}</mat-icon>
+                <mat-error class="error-message" *ngIf="loginForm.get('password').invalid">
+                    <span *ngIf="loginForm.get('password').hasError('required')">Obrigatório</span>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </section>
+
+    <section>
+        <!-- TODO <div id="server-alert" *ngIf="loginErrorMsg" class="alert alert-danger block w-100 mb-3">
+            <span>
+                {{ loginErrorMsg }}
+            </span>
+        </div> -->
+    </section>
+
+    <section class="submit">
+        <div class="d-flex justify-content-between align-items-center">
+            <div [style.visibility]="waiting ? 'visible' : 'hidden'" class="spin-container animation-spin">
+                <mat-icon aria-label="loading" color="primary" class="x2">autorenew</mat-icon>
+            </div>
+            <button mat-flat-button type="submit" [disabled]="waiting" color="primary">Login</button>
+        </div>
+    </section>
+</form>

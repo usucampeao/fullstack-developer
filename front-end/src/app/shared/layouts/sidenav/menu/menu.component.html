@@ -1,0 +1,22 @@
+<mat-accordion class="navigation">
+    <mat-expansion-panel *ngFor="let menu of menuItems; index as i" [expanded]="currentIndex === i" (opened)="setIndex(i)"
+        [hideToggle]="!menu.submenu">
+        <!-- Expansion title (Menu) -->
+        <mat-expansion-panel-header>
+            <mat-panel-title *ngIf="menu.icon">
+                <mat-icon>{{ menu.icon }}</mat-icon>
+            </mat-panel-title>
+            <mat-panel-description>
+                {{ menu.title }}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <!-- Expansion content (Submenu) -->
+        <mat-list *ngIf="menu.submenu && menu.submenu.length > 0">
+            <mat-list-item *ngFor="let submenu of menu.submenu" [routerLink]="submenu.path" (click)="toggleActive(submenu.path)"
+                [class.active]="active === submenu.path">
+                <span style="color: rgba(0, 0, 0, 0.54);">{{ submenu.title }}</span>
+            </mat-list-item>
+        </mat-list>
+    </mat-expansion-panel>
+</mat-accordion>

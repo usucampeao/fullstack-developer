@@ -1,0 +1,1 @@
+export * from './imoveis/consulta-imoveis.component';

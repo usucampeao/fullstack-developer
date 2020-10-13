@@ -1,0 +1,23 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="true " [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)" [class.closed]="hasMiniSidenav && !isOpened"
+        (mouseover)="(hasMiniSidenav && hasToggleMiniSidenav) && toggleSideMenu && drawer.open()" (mouseout)="(hasToggleMiniSidenav && toggleSideMenu) && drawer.close()">
+
+        <!-- sidenav -->
+        <app-sidenav></app-sidenav>
+        
+    </mat-sidenav>
+    <mat-sidenav-content [class.closed]="hasMiniSidenav && !isOpened">
+        <mat-toolbar style="background: #fd8405; color: white;">
+            <img *ngIf="!isOpened" src="../../../../assets/images/usucampeao.png" alt="" style="height:2.5rem; margin:0 auto;">
+            <!-- toolbar options -->
+            <app-toolbar [sidenav]="drawer" [toggleMenu$]="hasMiniSidenav && toggleSideMenu$" [showAccount]="true"
+                [showMenu]="true" [showLogout]="true"></app-toolbar>
+
+        </mat-toolbar>
+
+        <!-- Add Content Here -->
+        <ng-content></ng-content>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>
