@@ -3,7 +3,6 @@
     <span class="name">Menu</span>
 </button>
 <mat-menu #Menu="matMenu">
-    <img src="../../../../../assets/images/usucampeao2.png" alt="" style="height:4rem; padding:.5rem;">
     <button mat-menu-item *ngFor="let menu of menuitens" [routerLink]="menu.path">
         {{ menu.title }}
     </button>

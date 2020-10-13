@@ -50,7 +50,10 @@ export class AuthService {
                 const expiresAt = moment().add(user.expiresIn, 'second');
                 this.store.set(AppSettings.localStorage.expires, JSON.stringify(expiresAt.valueOf()));
             }).catch(() => {
-                this.toast.open('Dados inválidos');
+                this.toast.open('Dados inválidos', '', {
+                    duration: 3000,
+                    verticalPosition: 'top',
+                });
             });
     }
 
