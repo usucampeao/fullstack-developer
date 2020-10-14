@@ -1,0 +1,985 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>usucampeao-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">usucampeao-angular documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ConsultaImoveisComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/consulta/imoveis/consulta-imoveis.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-consulta-imoveis</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./consulta-imoveis.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./consulta-imoveis.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dataSource">dataSource</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#displayedColumns">displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#paginator">paginator</a>
+                            </li>
+                            <li>
+                                <a href="#sort">sort</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#applyFilter">applyFilter</a>
+                            </li>
+                            <li>
+                                <a href="#delete">delete</a>
+                            </li>
+                            <li>
+                                <a href="#edit">edit</a>
+                            </li>
+                            <li>
+                                <a href="#getAllImoveis">getAllImoveis</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(imovel: <a href="../injectables/ImovelService.html">ImovelService</a>, confirm: <a href="../injectables/DialogService.html">DialogService</a>, toast: MatSnackBar)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/consulta/imoveis/consulta-imoveis.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>imovel</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ImovelService.html" target="_self" >ImovelService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>confirm</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DialogService.html" target="_self" >DialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toast</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="applyFilter"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            applyFilter
+                        </b>
+                        <a href="#applyFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>applyFilter(filterValue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/components/consulta/imoveis/consulta-imoveis.component.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filterValue</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                        <b>
+                            delete
+                        </b>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>delete(imovel: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/components/consulta/imoveis/consulta-imoveis.component.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>imovel</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="edit"></a>
+                    <span class="name">
+                        <b>
+                            edit
+                        </b>
+                        <a href="#edit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>edit(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/components/consulta/imoveis/consulta-imoveis.component.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllImoveis"></a>
+                    <span class="name">
+                        <b>
+                            getAllImoveis
+                        </b>
+                        <a href="#getAllImoveis"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAllImoveis()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/components/consulta/imoveis/consulta-imoveis.component.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/components/consulta/imoveis/consulta-imoveis.component.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSource"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dataSource</b>
+                            <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Imovel.html" target="_self" >MatTableDataSource&lt;Imovel&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/consulta/imoveis/consulta-imoveis.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayedColumns"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            displayedColumns</b>
+                            <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/consulta/imoveis/consulta-imoveis.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="paginator"></a>
+                        <span class="name">
+                            <b>
+                            paginator</b>
+                            <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatPaginator</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(MatPaginator, {static: true})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/consulta/imoveis/consulta-imoveis.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sort"></a>
+                        <span class="name">
+                            <b>
+                            sort</b>
+                            <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatSort</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(MatSort, {static: true})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/consulta/imoveis/consulta-imoveis.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
+import { DialogService } from &#x27;./../../../services/dialog.service&#x27;;
+import { Imovel } from &#x27;./../../../models/imovel.interface&#x27;;
+import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { MatTableDataSource } from &#x27;@angular/material/table&#x27;;
+
+import { MatSort } from &#x27;@angular/material/sort&#x27;;
+import { MatPaginator } from &#x27;@angular/material/paginator&#x27;;
+import { ImovelService } from &#x27;@app/services/imovel.service&#x27;;
+import { retry, catchError } from &#x27;rxjs/operators&#x27;;
+import { throwError } from &#x27;rxjs&#x27;;
+
+@Component({
+    selector: &#x27;app-consulta-imoveis&#x27;,
+    templateUrl: &#x27;./consulta-imoveis.component.html&#x27;,
+    styleUrls: [&#x27;./consulta-imoveis.component.scss&#x27;]
+})
+export class ConsultaImoveisComponent implements OnInit {
+    public dataSource: MatTableDataSource&lt;Imovel&gt;;
+    public displayedColumns: string[];
+
+    @ViewChild(MatSort, { static: true }) sort: MatSort;
+    @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+
+    constructor(private imovel: ImovelService, 
+        private confirm: DialogService,
+        private toast: MatSnackBar) {
+        this.displayedColumns &#x3D; [&#x27;titulo&#x27;, &#x27;valor&#x27;, &#x27;localidade&#x27;, &#x27;bairro&#x27;, &#x27;action&#x27;];
+    }
+
+    ngOnInit() {
+        this.getAllImoveis();
+    }
+
+    public applyFilter(filterValue: string) {
+        this.dataSource.filter &#x3D; filterValue.trim().toLowerCase();
+    }
+
+    getAllImoveis() {
+        this.imovel.getAllImoveis()
+        .pipe(
+            retry(2),
+            catchError(e &#x3D;&gt; throwError(e))
+            )
+            .subscribe((res: Array&lt;Imovel&gt;) &#x3D;&gt; {
+                this.dataSource &#x3D; new MatTableDataSource(res);
+                this.dataSource.sort &#x3D; this.sort;
+                this.dataSource.paginator &#x3D; this.paginator;
+            });
+    }
+
+    edit(id: string) {
+        console.log(id)
+    }
+
+    delete(imovel: any){
+        this.confirm.openConfirmDialog(&#x60;Tem certeza que deseja deletar o imóvel ${imovel.titulo}?&#x60;)
+        .afterClosed().subscribe(res &#x3D;&gt;{
+          if(res){
+            this.imovel.deletarImovel(imovel._id)
+            .pipe(
+                retry(2),
+                catchError(e &#x3D;&gt; throwError(e))
+                )
+                .subscribe((res: any) &#x3D;&gt; {
+                    this.getAllImoveis();
+                    this.toast.open(&#x27;Imóvel deletado com sucesso&#x27;, &#x27;&#x27;, {
+                        duration: 3000,
+                        verticalPosition: &#x27;top&#x27;,
+                    })
+                });
+          }
+        });
+    }
+
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-card&gt;
+    &lt;mat-card-header&gt;
+        &lt;mat-card-title&gt;Consultar imóveis&lt;/mat-card-title&gt;
+    &lt;/mat-card-header&gt;
+
+    &lt;mat-card-content&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+            &lt;mat-icon matPrefix&gt;search&lt;/mat-icon&gt;
+            &lt;mat-label&gt;Pesquisar&lt;/mat-label&gt;
+            &lt;input matInput (keyup)&#x3D;&quot;applyFilter($event.target.value)&quot; placeholder&#x3D;&quot;Digite um nome para filtrar&quot;&gt;
+        &lt;/mat-form-field&gt;
+
+        &lt;mat-table [dataSource]&#x3D;&quot;dataSource&quot; matSort&gt;
+            &lt;ng-container matColumnDef&#x3D;&quot;titulo&quot;&gt;
+                &lt;mat-header-cell *matHeaderCellDef&gt; Titulo &lt;/mat-header-cell&gt;
+                &lt;mat-cell *matCellDef&#x3D;&quot;let imovel&quot;&gt; {{imovel.titulo}} &lt;/mat-cell&gt;
+            &lt;/ng-container&gt;
+
+            &lt;ng-container matColumnDef&#x3D;&quot;valor&quot;&gt;
+                &lt;mat-header-cell *matHeaderCellDef mat-sort-header&gt; Valor &lt;/mat-header-cell&gt;
+                &lt;mat-cell *matCellDef&#x3D;&quot;let imovel&quot;&gt; R$ {{imovel.valor}} &lt;/mat-cell&gt;
+            &lt;/ng-container&gt;
+
+            &lt;ng-container matColumnDef&#x3D;&quot;localidade&quot;&gt;
+                &lt;mat-header-cell *matHeaderCellDef mat-sort-header&gt; Cidade &lt;/mat-header-cell&gt;
+                &lt;mat-cell *matCellDef&#x3D;&quot;let imovel&quot;&gt; {{imovel.localidade}} &lt;/mat-cell&gt;
+            &lt;/ng-container&gt;
+
+            &lt;ng-container matColumnDef&#x3D;&quot;bairro&quot;&gt;
+                &lt;mat-header-cell *matHeaderCellDef mat-sort-header&gt; Bairro &lt;/mat-header-cell&gt;
+                &lt;mat-cell *matCellDef&#x3D;&quot;let imovel&quot;&gt; {{imovel.bairro}} &lt;/mat-cell&gt;
+            &lt;/ng-container&gt;
+
+            &lt;ng-container matColumnDef&#x3D;&quot;action&quot;&gt;
+                &lt;mat-header-cell *matHeaderCellDef&gt;
+                    Ação
+                &lt;/mat-header-cell&gt;
+
+                &lt;mat-cell *matCellDef&#x3D;&quot;let imovel&quot;&gt;
+                    &lt;button mat-icon-button&gt;
+                    &lt;mat-icon [routerLink]&#x3D;&quot;[&#x27;/cadastrar/imovel&#x27;, imovel._id]&quot; (click)&#x3D;&quot;edit(imovel._id)&quot;&gt;edit&lt;/mat-icon&gt;
+                    &lt;/button&gt;
+
+                    &lt;button mat-icon-button&gt;
+                        &lt;mat-icon (click)&#x3D;&quot;delete(imovel)&quot;&gt;delete&lt;/mat-icon&gt;
+                    &lt;/button&gt;
+                &lt;/mat-cell&gt;
+            &lt;/ng-container&gt;
+
+            &lt;mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns; sticky: true&quot;&gt;&lt;/mat-header-row&gt;
+            &lt;mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/mat-row&gt;
+        &lt;/mat-table&gt;
+
+        &lt;mat-paginator [pageSizeOptions]&#x3D;&quot;[10, 50]&quot; showFirstLastButtons&gt;&lt;/mat-paginator&gt;
+
+    &lt;/mat-card-content&gt;
+&lt;/mat-card&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./consulta-imoveis.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">mat-card {
+    gap: 2rem;
+    margin: 2rem;
+    display: grid;
+    padding: 2rem;
+    border: inherit;
+    grid-template-rows: repeat(2,auto);
+    box-shadow: 0 0 1rem -0.25rem rgba(45, 53, 60, .1) !important;
+
+    mat-card-title {
+        margin: 0;
+        padding: 0;
+        padding-left: 2rem;
+        margin-left: -3rem;
+        border-left: .15rem solid #fd8405;
+    }
+    mat-card-content {
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-rows: repeat(3,auto);
+
+        mat-form-field { 
+            width: 100%;
+            font-size: .85rem; 
+
+            mat-icon {
+                margin-right: .5rem;
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+        mat-table {
+            width: 100%;
+            overflow-x: auto;
+        }
+    }
+}
+
+
+
+mat-header-row {
+    &amp;.mat-table-sticky {
+        box-shadow: 0 3px 6px -6px #333;
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-card>    <mat-card-header>        <mat-card-title>Consultar imóveis</mat-card-title>    </mat-card-header>    <mat-card-content>        <mat-form-field appearance="outline">            <mat-icon matPrefix>search</mat-icon>            <mat-label>Pesquisar</mat-label>            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Digite um nome para filtrar">        </mat-form-field>        <mat-table [dataSource]="dataSource" matSort>            <ng-container matColumnDef="titulo">                <mat-header-cell *matHeaderCellDef> Titulo </mat-header-cell>                <mat-cell *matCellDef="let imovel"> {{imovel.titulo}} </mat-cell>            </ng-container>            <ng-container matColumnDef="valor">                <mat-header-cell *matHeaderCellDef mat-sort-header> Valor </mat-header-cell>                <mat-cell *matCellDef="let imovel"> R$ {{imovel.valor}} </mat-cell>            </ng-container>            <ng-container matColumnDef="localidade">                <mat-header-cell *matHeaderCellDef mat-sort-header> Cidade </mat-header-cell>                <mat-cell *matCellDef="let imovel"> {{imovel.localidade}} </mat-cell>            </ng-container>            <ng-container matColumnDef="bairro">                <mat-header-cell *matHeaderCellDef mat-sort-header> Bairro </mat-header-cell>                <mat-cell *matCellDef="let imovel"> {{imovel.bairro}} </mat-cell>            </ng-container>            <ng-container matColumnDef="action">                <mat-header-cell *matHeaderCellDef>                    Ação                </mat-header-cell>                <mat-cell *matCellDef="let imovel">                    <button mat-icon-button>                    <mat-icon [routerLink]="[\'/cadastrar/imovel\', imovel._id]" (click)="edit(imovel._id)">edit</mat-icon>                    </button>                    <button mat-icon-button>                        <mat-icon (click)="delete(imovel)">delete</mat-icon>                    </button>                </mat-cell>            </ng-container>            <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>        </mat-table>        <mat-paginator [pageSizeOptions]="[10, 50]" showFirstLastButtons></mat-paginator>    </mat-card-content></mat-card></div>'
+    var COMPONENTS = [{'name': 'AccountCardComponent', 'selector': 'app-account-card'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthLayoutComponent', 'selector': 'app-auth-layout'},{'name': 'CadastrarImovelComponent', 'selector': 'app-cadastrar-imovel'},{'name': 'ConsultaImoveisComponent', 'selector': 'app-consulta-imoveis'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainLayoutComponent', 'selector': 'app-main-layout'},{'name': 'MainNavComponent', 'selector': 'app-main-nav'},{'name': 'MatConfirmDeleteComponent', 'selector': 'app-confirm-delete'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MenuDropdownComponent', 'selector': 'app-menu-dropdown'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'ToolbarComponent', 'selector': 'app-toolbar'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ConsultaImoveisComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ConsultaImoveisComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
