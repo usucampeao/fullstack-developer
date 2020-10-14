@@ -2,7 +2,7 @@
 
 - Node
 - Npm
-- Docker * <i>(somente se não possuir o mongodb)</i>
+- Docker
  
 
 ### Instalação NPM e Node
@@ -23,25 +23,6 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io docker-compose
-```
-
-### Visualizar documentação completa
-```
-npm run start:doc
-```
-
-# Configurações
-
-## .env
-* DEFAULT_SECRET é jwt secret para o User credentials
-* MASTER_SECRET é jwt secret para o Master Token
-```
-MONGO_URL=mongodb://localhost:27018/opensapi
-MONGO_USER=root
-MONGO_PASS=opens
-MONGO_SCHEMA=admin
-DEFAULT_SECRET=opensapi_secret
-MASTER_SECRET=opensapi_master_secret
 ```
 
 ## Executando 
@@ -91,6 +72,11 @@ http://localhost:3000/api/
 Testar mongoExpress (usuario express, senha opens):
 ``` 
 http://localhost:8081
+```
+
+### Acessar documentação completa
+```
+npm run start:doc
 ```
 
 ## Postman Collection
