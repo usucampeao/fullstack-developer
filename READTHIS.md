@@ -40,8 +40,10 @@ Insira o usuário master no sistema, responsável por criar e deletar usuários:
 use opensapi
 db.user.insert({"isMaster" : true, "login" : "master", "name" : "master", "email" : "master@master.com", "password" : "$2b$10$TLQH.vtlYQUfVX8EhpfYhegZA2J6Q1VV6u3m.jj7oR../JlXjfppK", "__v" : 0 })
 ```
+PS: Senha é 123456
 
-Finalmente, instale as dependências npm install e execute a aplicação npm run start e faça a autenticação em POST:http://localhost:3000/auth com body
+### Testando endpoints
+Faça a autenticação em POST:http://localhost:3000/auth com body
 ```json
 { 
     "email":"master@master.com",
