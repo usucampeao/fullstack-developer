@@ -39,8 +39,7 @@ export class ConsultaImoveisComponent implements OnInit {
     getAllImoveis() {
         this.imovel.getAllImoveis()
         .pipe(
-            retry(2),
-            catchError(e => throwError(e))
+            retry(2)
             )
             .subscribe((res: Array<Imovel>) => {
                 this.dataSource = new MatTableDataSource(res);
@@ -59,12 +58,16 @@ export class ConsultaImoveisComponent implements OnInit {
           if(res){
             this.imovel.deletarImovel(imovel._id)
             .pipe(
-                retry(2),
-                catchError(e => throwError(e))
+                retry(2)
                 )
                 .subscribe((res: any) => {
                     this.getAllImoveis();
                     this.toast.open('Imóvel deletado com sucesso', '', {
+                        duration: 3000,
+                        verticalPosition: 'top',
+                    })
+                }, error => {
+                    this.toast.open('Ocorreu um erro ao deletar o imóvel', '', {
                         duration: 3000,
                         verticalPosition: 'top',
                     })

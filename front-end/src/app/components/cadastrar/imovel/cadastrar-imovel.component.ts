@@ -98,11 +98,15 @@ export class CadastrarImovelComponent implements OnDestroy {
     gravarImovel(imovel: Imovel) {
         this.imovel.gravarImovel(imovel)
         .pipe(
-            retry(2),
-            catchError(e => throwError(e))
+            retry(2)
             )
             .subscribe((res: any) => {
                 this.toast.open('Imóvel salvo com sucesso', '', {
+                    duration: 3000,
+                    verticalPosition: 'top',
+                })
+            }, error => {
+                this.toast.open('Ocorreu um erro ao salvar o imóvel', '', {
                     duration: 3000,
                     verticalPosition: 'top',
                 })
@@ -112,11 +116,15 @@ export class CadastrarImovelComponent implements OnDestroy {
     alterarImovel(id: string, imovel: Imovel) {
         this.imovel.alterarImovel(id, imovel)
         .pipe(
-            retry(2),
-            catchError(e => throwError(e))
+            retry(2)
             )
             .subscribe((res: any) => {
                 this.toast.open('Imóvel alterado com sucesso', '', {
+                    duration: 3000,
+                    verticalPosition: 'top',
+                })
+            }, error => {
+                this.toast.open('Ocorreu um erro ao salvar o imóvel', '', {
                     duration: 3000,
                     verticalPosition: 'top',
                 })
@@ -126,8 +134,7 @@ export class CadastrarImovelComponent implements OnDestroy {
     getImovelById(id: string) {
         this.imovel.getImovelById(id)
         .pipe(
-            retry(2),
-            catchError(e => throwError(e))
+            retry(2)
             )
             .subscribe((res: Imovel) => {
                 if (!res) {

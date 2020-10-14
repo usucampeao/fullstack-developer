@@ -1,5 +1,7 @@
 ![UsuCampeão](logo.png)
 
+[>>>>>> README do Processo Seletivo](READTHIS.md)
+
 # USUCAMPEÃO Tecnologia em Regularização Imobiliária
 
 Somos mais que uma Startup de regularização de imóveis, nascemos para resolver um problema social que atinge mais de 50% da população brasileira.
