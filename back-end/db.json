@@ -1,0 +1,19 @@
+{
+    "properties": [
+        {
+            "image": "",
+            "publication_date": "",
+            "title": "",
+            "description": "",
+            "value": "",
+            "area" : "",
+            "address" : {
+                "public_place": "",
+                "district": "",
+                "postal_code": "",
+                "city": "",
+                "uf": ""
+            }
+        }
+    ]
+}

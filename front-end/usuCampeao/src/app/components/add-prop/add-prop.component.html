@@ -1,0 +1,100 @@
+<app-toolbar-comp></app-toolbar-comp>
+<div class="c">
+  <div class="c1">
+    <div class="ff0">
+      Anuncie seu imóvel
+      <div class="ff1">
+        Anuncie hoje seu imóvel
+        para vender ou alugar
+        Anuncie seu imóvel para venda ou aluguel no portal especialista.
+      </div>
+    </div>
+
+
+  </div>
+  <div class="c2">
+
+    <!--FORM-->
+    <div class="form" [formGroup]="form">
+      <div class="aforms">
+        <mat-form-field class="form01">
+          <mat-label>Título</mat-label>
+          <input type="text" formControlName="title" matInput placeholder="Digitie o título">
+        </mat-form-field>
+
+        <mat-form-field class="form01">
+          <mat-label>Descrição</mat-label>
+          <input type="text" formControlName="description" matInput placeholder="Digitie a descrição">
+        </mat-form-field>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+          <mat-form-field class="form01">
+            <mat-label>Valor</mat-label>
+            <input type="text" style="text-align: center;" formControlName="value" matInput currencyMask>
+          </mat-form-field>
+
+          <mat-form-field class="form01">
+            <mat-label>Área</mat-label>
+            <input type="text" formControlName="area" matInput placeholder="Digite a àrea">
+          </mat-form-field>
+        </div>
+
+
+        <div style="padding: 10px; background-color: rgb(255, 255, 255); text-align: center; color: rgb(74, 74, 74);">
+          Endereço
+        </div>
+
+        <mat-form-field class="form01-50">
+          <mat-label>CEP</mat-label>
+          <input type="text" formControlName="postal_code" matInput placeholder="00.000-000" mask="00.000-000">
+        </mat-form-field>
+
+
+
+        <mat-form-field class="form01-50">
+          <mat-label>Estado</mat-label>
+          <input type="text" formControlName="uf" matInput placeholder="Estado" mask="AA">
+        </mat-form-field>
+
+        <mat-form-field class="form01">
+          <mat-label>Logradouro</mat-label>
+          <input type="text" formControlName="public_place" matInput placeholder="Logradouro">
+        </mat-form-field>
+
+        <mat-form-field class="form01">
+          <mat-label>Número</mat-label>
+          <input type="text" formControlName="number" matInput placeholder="Número">
+        </mat-form-field>
+
+        <mat-form-field class="form01">
+          <mat-label>Complemento</mat-label>
+          <input type="text" formControlName="complement" matInput placeholder="Complemento">
+        </mat-form-field>
+
+        <mat-form-field class="form01-50">
+          <mat-label>Bairro</mat-label>
+          <input type="text" formControlName="district" matInput placeholder="Bairro">
+        </mat-form-field>
+
+        <mat-form-field class="form01-50">
+          <mat-label>Cidade</mat-label>
+          <input type="text" formControlName="city" matInput placeholder="Cidade">
+        </mat-form-field>
+
+
+
+      </div>
+
+      <div style="text-align: center;">
+        <a class="a1" mat-button href="javascript:;" target="_blank">Política de privacidade</a>
+        <br>
+        <mat-checkbox class="">Aceito os termos </mat-checkbox>
+      </div>
+
+      <button (click)="addProps()" [disabled]="statusBT" style="margin: 15px;" mat-raised-button
+        color="primary">Anunciar</button>
+
+    </div>
+
+  </div>
+</div>

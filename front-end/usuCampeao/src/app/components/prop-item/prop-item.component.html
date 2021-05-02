@@ -1,0 +1,54 @@
+<div class="a-itens">
+
+  <div class="item" *ngFor="let item of itens">
+    <div class="item-im">
+      <div class="inew" *ngIf="itensStatus"> </div>
+      <img width="100%" src="../../../assets/itemImg.jpg" alt="" srcset="" *ngIf="itensStatus">
+
+      <ngx-skeleton-loader *ngIf="!itensStatus" [theme]="{
+      'border-radius': '1px',
+      height: '205px',
+      'background-color': '#e1dede',
+      border: '1px solid white'
+    }"></ngx-skeleton-loader>
+
+    </div>
+    <div class="item-da">
+      <div class="tt">
+        <ngx-skeleton-loader count="1" *ngIf="!itensStatus" [theme]="{
+          'border-radius': '1px',
+          height: '30px',
+          'background-color': '#e1dede',
+          border: '1px solid white'
+        }"></ngx-skeleton-loader>
+        <span *ngIf="itensStatus">
+          {{ item.title }}
+        </span>
+      </div>
+      <div class="desc">
+
+        <ngx-skeleton-loader count="3" *ngIf="!itensStatus" [theme]="{
+          'border-radius': '1px',
+          height: '20px',
+          'background-color': '#e1dede',
+          border: '1px solid white'
+        }"></ngx-skeleton-loader>
+        <span *ngIf="itensStatus">
+          {{ item.description }}
+        </span>
+
+
+      </div>
+
+    </div>
+    <div class="item-d1">
+      <div class="item-d12l">
+        <div style="font-size: 12px;"> <span *ngIf="itensStatus">Endereço: {{ item.address.district }}, {{ item.address.city }}</span>  </div>
+        <div style="font-size: 12px;"> <span *ngIf="itensStatus">Complemento: {{ item.address.public_place }}</span> </div>
+        <div style="font-size: 12px;"> <span *ngIf="itensStatus">CEP: {{ item.address.postal_code }}</span> </div>
+      </div>
+      <div class="item-d12"> <span *ngIf="itensStatus">{{ item.value | currency:'BRL'}}</span> </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,35 @@
+<div class="a">
+  <app-toolbar-comp></app-toolbar-comp>
+
+  <div>
+
+    <div class="ac">
+
+      <div class="ccc3">
+        <mat-form-field class="form01" appearance="outline">
+          <mat-label>Cidade</mat-label>
+          <input type="text" matInput placeholder="Digitie o nome da cidade">
+        </mat-form-field>
+        <mat-form-field class="form01" appearance="outline">
+          <mat-label>Bairro</mat-label>
+          <input type="text" matInput placeholder="Digitie o nome do bairro">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="personbt">Buscar</button>
+      </div>
+
+
+
+      <div class="f1">
+        1.117.312 imóveis à venda em São Paulo - SP
+      </div>
+      <!--itens-->
+      <app-prop-item [itensStatus]="service.getPropsStatus()" [itens]="service.getListProps()"></app-prop-item>
+      <!--itens-->
+    </div>
+
+  </div>
+  <div class="foo">
+
+  </div>
+</div>
