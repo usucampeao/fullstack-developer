@@ -87,6 +87,7 @@ Temos alguns pré-requisitos:
 - Uso de SASS/SCSS para CSS da aplicação;
 - Design responsivo;
 - Pelo menos um filtro de pesquisa deve estar disponível;
+-   Testes usando JEST e Cypress serao obrigatorios !!!!
 
 Além disso, vamos avaliar como você organiza e documenta o projeto, e a estrutura de módulos, componentes, serviços e rotas que você criou.
 
