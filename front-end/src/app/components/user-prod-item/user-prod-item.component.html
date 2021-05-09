@@ -1,0 +1,76 @@
+<div [formGroup]="form" style="overflow: auto; height: 500px;">
+
+
+
+  <mat-form-field class="i" appearance="outline">
+    <mat-label>Título</mat-label>
+    <input formControlName="title" matInput placeholder="Título" type="text">
+  </mat-form-field>
+
+  <mat-form-field class="i" appearance="outline">
+    <mat-label>Descrição</mat-label>
+    <input formControlName="description" matInput placeholder="Descrição" type="text">
+  </mat-form-field>
+
+
+
+    <div class="sbue">
+      <mat-form-field class="i" appearance="outline">
+        <mat-label>Cep</mat-label>
+        <input mask="00.000-000" formControlName="postal_code" matInput placeholder="Endereço" type="text">
+      </mat-form-field>
+
+    <mat-form-field class="i" appearance="outline">
+      <mat-label>Rua</mat-label>
+      <input formControlName="public_place" matInput placeholder="Endereço" type="text">
+    </mat-form-field>
+
+    <mat-form-field class="i" appearance="outline">
+      <mat-label>Número</mat-label>
+      <input formControlName="number" matInput placeholder="Endereço" type="text">
+    </mat-form-field>
+  </div>
+
+
+
+  <mat-form-field class="i" appearance="outline">
+    <mat-label>Complemento</mat-label>
+    <input formControlName="complement" matInput placeholder="Endereço" type="text">
+  </mat-form-field>
+
+  <div class="ssv">
+
+
+  <mat-form-field class="i" appearance="outline">
+    <mat-label>Bairro</mat-label>
+    <input formControlName="district" matInput placeholder="Endereço" type="text">
+  </mat-form-field>
+
+  <mat-form-field class="i" appearance="outline">
+    <mat-label>Cidade</mat-label>
+    <input formControlName="city" matInput placeholder="Endereço" type="text">
+  </mat-form-field>
+
+  </div>
+
+  <div class="guin">
+
+
+  <mat-form-field class="i" appearance="outline">
+    <mat-label>Área</mat-label>
+    <input formControlName="area" matInput placeholder="Área" type="text">
+  </mat-form-field>
+
+  <mat-form-field class="i" appearance="outline">
+    <mat-label>Valor</mat-label>
+    <input currencyMask formControlName="value" matInput placeholder="Endereço" type="text">
+  </mat-form-field>
+
+  </div>
+
+  <div>
+    <button mat-dialog-close mat-raised-button color="warn">Cancelar</button>
+    <button [disabled]="statusbt1" (click)="onclickSave()" mat-raised-button color="primary" style="margin-left: 5px;">Salvar</button>
+  </div>
+
+</div>

@@ -1,0 +1,42 @@
+.i {
+  width: 100%;
+}
+
+.sbue {
+  display              : grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap                  : 10px
+}
+
+.ssv {
+  display              : grid;
+  grid-template-columns: 1fr 1fr;
+  gap                  : 10px
+}
+
+
+.guin {
+  display              : grid;
+  grid-template-columns: 1fr 1fr;
+  gap                  : 10px
+}
+
+@media only screen and (max-width: 600px) {
+  .sbue {
+    display              : grid;
+    grid-template-columns: 1fr;
+    gap                  : 10px
+  }
+
+  .ssv {
+    display              : grid;
+    grid-template-columns: 1fr;
+    gap                  : 10px
+  }
+
+  .guin {
+    display              : grid;
+    grid-template-columns: 1fr;
+    gap                  : 10px
+  }
+}

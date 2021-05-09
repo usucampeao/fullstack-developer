@@ -1,0 +1,11 @@
+<div class="b">
+  <img width="170" src="../../../assets/logo.png">
+  <div style="text-align: end;">
+
+    <button mat-button routerLink="/">Início</button>
+    <button mat-button  *ngIf="!service.getStatusLogin()" routerLink="/login">Acessa minha conta</button>
+    <button mat-button  *ngIf="service.getStatusLogin()"  routerLink="/user-profile"> Nome Usuário </button>
+    <button mat-button (click)="onClickb1()">Anuciar novo imóvel</button>
+
+  </div>
+</div>

@@ -48,7 +48,11 @@ app.post('/removeImmobile', (req, res) => {
 });
 
 app.put('/updateImmobile', (req, res) => {
-
+  console.log(req.body);
+  funcApi.updateItem( req.body ).then(response => {
+    res.statusCode = response.statusCode;
+    res.json( response );
+});
 });
 ///////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////
