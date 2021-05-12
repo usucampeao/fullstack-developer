@@ -47,34 +47,45 @@ module.exports = class FunctionApi {
   getHouses() {
     return new Promise((resolver, reject) => {
       let List = [];
-      firebase.database().ref("properties").on("child_added" , data => {
-        console.log('data.key', data.key)
 
-        var objp = {
-          id: data.key,
-          image: '',
-          publication_date: data.val().publication_date,
-          title: data.val().title,
-          description: data.val().description,
-          value: data.val().value,
-          area: data.val().value,
-          address: {
-            public_place: data.val().address.public_place,
-            district: data.val().address.district,
-            postal_code: data.val().address.postal_code,
-            city: data.val().address.city,
-            uf: data.val().address.uf
-          }
+      firebase.database().ref("properties").on("value" , data => {
+        if (data.val() == null) {
+          resolver(List);
+          return;
         }
-        console.log(objp);
-        List.push(objp)
 
-        resolver(List);
+      firebase.database().ref("properties").on("child_added" , data => {
+          console.log('data.key', data.key)
 
-      }, errorObject => {
-        console.log(errorObject.code);
-        reject();
+          var objp = {
+            id: data.key,
+            image: '',
+            publication_date: data.val().publication_date,
+            title: data.val().title,
+            description: data.val().description,
+            value: data.val().value,
+            area: data.val().value,
+            address: {
+              public_place: data.val().address.public_place,
+              district: data.val().address.district,
+              postal_code: data.val().address.postal_code,
+              city: data.val().address.city,
+              uf: data.val().address.uf
+            }
+          }
+          console.log(objp);
+          List.push(objp)
+
+          resolver(List);
+
+        }, errorObject => {
+          console.log(errorObject.code);
+          reject();
+        });
+
       });
+
+
     });
   }
 
@@ -112,6 +123,7 @@ module.exports = class FunctionApi {
   updateItem(params = {}) {
     return new Promise((resolver, reject) => {
       console.log(params);
+      if (!params.id) { return resolver(this.resultApi('Erro de identificação do item', { code: 1 }, true, 500)); }
       if (!params.title) { return resolver(this.resultApi('Informe o título', { code: 1 }, true, 500)); }
       if (!params.description) { return resolver(this.resultApi('Informe a descrição', { code: 2 }, true, 500)); }
       if (!params.value) { return resolver(this.resultApi('Informe o valor', { code: 3 }, true, 500)); }
@@ -123,6 +135,7 @@ module.exports = class FunctionApi {
       if (!params.uf) { return resolver(this.resultApi('Informe o estado', { code: 9 }, true, 500)); }
 
       let a = this.Prop;
+      a.title = params.id;
       a.title = params.title;
       a.description = params.description;
       a.value = params.value;
@@ -134,9 +147,20 @@ module.exports = class FunctionApi {
       a.address.city = params.city;
       a.address.uf = params.uf;
 
-      firebase.database().ref('properties/').set(a); // UPDATE ITEM FIREBASE
-
+      // firebase.database().ref('properties/').doc(a.id).set(a); // UPDATE ITEM FIREBASE
+      firebase.database().ref('/properties/' + a.id).set(a);
       resolver(this.resultApi('OK', { code: 200 }, false, 200));
+    });
+  }
+
+
+  deleteItem(params = {}) {
+    return new Promise((resolver, reject) => {
+      console.log(params);
+      if (!params.id) { return resolver(this.resultApi('Erro de identificação do item', { code: 1 }, true, 500)); }
+      firebase.database().ref('properties').child(params.id).remove();
+
+      resolver(this.resultApi('OK', { code: 200, message: 'Item removido com sucesso!' }, false, 200));
     });
   }
 

@@ -104,22 +104,3 @@ Ganhe pontos extras por:
 
 **Boa sorte! =)**
 
-
-
-
-
-
-
-
-Query 
-
-image: as
-title: Casa 01
-description: MY house description
-value: 1500
-area: 10
-address[public_place]: PP
-address[city]: Juazeiro
-address[postal_code]: 48904200
-address[district]: Centro
-address[uf]: BA
