@@ -13,6 +13,7 @@ export class UserProdItemComponent implements OnInit {
   form: FormGroup;
   statusbt1 = false;
   item = {
+    id: '',
     title: '',
     description: '',
     value: '',
@@ -37,6 +38,7 @@ export class UserProdItemComponent implements OnInit {
 
     console.log(this.data)
     this.form = this.fb.group({
+      id: [this.item.id],
       title: [this.item.title],
       description: [this.item.description],
       value: [this.item.value],

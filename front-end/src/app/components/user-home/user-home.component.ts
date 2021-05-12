@@ -14,7 +14,7 @@ export class UserHomeComponent implements OnInit {
     { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
   ];
 
-  displayedColumns: string[] = [ 'ti', 'end', 'a', 'v', 'dp', 'bt1'];
+  displayedColumns: string[] = ['ti', 'end', 'a', 'v', 'dp', 'bt1'];
   dataSource: any;
   statusLoader = false;
 
@@ -25,15 +25,18 @@ export class UserHomeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.consultaI();
 
-    this.statusLoader = true;
+  }
+
+
+  consultaI() {
     this.service.getPropsProm().then((response: Array<Prop>) => {
       console.log(response);
       this.dataSource = response;
       this.statusLoader = false;
 
     });
-
   }
 
   onClickEdit(item: any) {
@@ -43,13 +46,19 @@ export class UserHomeComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-
+      this.consultaI();
     });
   }
 
   onClickRemove(item: any) {
-
+    this.service.removeProp(item).then((response: Array<Prop>) => {
+      console.log(response);
+      this.dataSource = response;
+      this.statusLoader = false;
+      this.consultaI();
+    });
   }
+
 
 }
 

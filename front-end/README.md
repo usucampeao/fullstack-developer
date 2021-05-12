@@ -1,27 +1,26 @@
-# UsuCampeao
+# Primeiro acesso
+Executar `npm install` para instalar as dependências 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
-## Development server
+## Subindo o aplicativo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Executar `ng serve` para subir a aplicação e após acessar a url `http://localhost:4200/`
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Executar `ng test` para fazer testes via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+O sistema está em um formato de um protótipo, pois a entenção é mostrar um pouco dos meus conhecimentos e a forma que utilizo para
+desenvolver meus projetos no dia a dia.
 
-## Further help
+Para utilizarmos o sistema primeiramente teremos subir o back-end:
+## Iniciar back-end
+Executar `npm install` para subir o back-end --->  http://localhost:8080
+Executar `nodemon index.js` para subir o back-end
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+O sistema usa o firebase database para amazenas as coleções.
+
+

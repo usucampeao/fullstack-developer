@@ -16,4 +16,8 @@ export class HomeComponent implements OnInit {
 
   }
 
+  buscar() {
+    alert('Em desenvolvimento');
+  }
+
 }

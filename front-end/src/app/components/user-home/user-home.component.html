@@ -60,7 +60,7 @@
     <div>CEP: {{item.address.postal_code | mask:'00.000-000' }}</div>
     <div style="display: flex; gap: 5px;">
 
-      <button mat-stroked-button color="warn">Remover</button>
+      <button mat-stroked-button color="warn" (click)="onClickRemove(item)">Remover</button>
       <button mat-stroked-button (click)="onClickEdit(item)">Editar</button>
 
     </div>

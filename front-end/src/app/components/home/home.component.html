@@ -15,13 +15,13 @@
           <input type="text" matInput placeholder="Digitie o nome do bairro">
         </mat-form-field>
 
-        <button mat-raised-button color="primary" class="personbt">Buscar</button>
+        <button mat-raised-button color="primary" class="personbt" (click)="buscar()">Buscar</button>
       </div>
 
 
 
       <div class="f1">
-        1.117.312 imóveis à venda em São Paulo - SP
+        {{service.getListProps().length}} imóveis à venda em São Paulo - SP
       </div>
       <!--itens-->
       <app-prop-item [itensStatus]="service.getPropsStatus()" [itens]="service.getListProps()"></app-prop-item>

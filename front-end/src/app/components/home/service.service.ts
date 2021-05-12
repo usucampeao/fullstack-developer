@@ -78,4 +78,18 @@ export class ServiceService {
 
    }
 
+   removeProp(item: any): Promise<any> {
+    return new Promise((resolver, reject) => {
+
+       this.http.put(`${this.apiURL}/deleteImmobile`, item)
+       .subscribe((resultado: Array<any>) => {
+          resolver(resultado);
+       }, error => {
+          console.log('error', error);
+       });
+
+     });
+
+   }
+
 }

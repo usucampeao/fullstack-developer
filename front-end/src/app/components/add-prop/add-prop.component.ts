@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ServiceService } from './../home/service.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +15,7 @@ export class AddPropComponent implements OnInit {
   statusBT = false;
   checked = false;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private sevice: ServiceService) { }
+  constructor(private fb: FormBuilder, private http: HttpClient, private sevice: ServiceService, private router: Router) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -47,7 +48,8 @@ export class AddPropComponent implements OnInit {
   addProps() {
     this.statusBT = true;
     this.http.post(`${this.sevice.apiURL}/addImmobile`, this.form.value).subscribe(()=>{
-
+      this.sevice.getProps();
+      this.router.navigate(['/']);
     }, error => {
       this.statusBT =false;
       console.log(error.error);
