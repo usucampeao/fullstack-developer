@@ -1,3 +1,8 @@
+![inicio parte 2](https://user-images.githubusercontent.com/26775889/118026927-c6835100-b337-11eb-88d9-2ab09c8b426e.png)
+![inicio](https://user-images.githubusercontent.com/26775889/118026932-c7b47e00-b337-11eb-846b-4d946fc07f9d.png)
+![login](https://user-images.githubusercontent.com/26775889/118026934-c7b47e00-b337-11eb-8f2b-b948b34da224.png)
+
+
 # Primeiro acesso
 Executar `npm install` para instalar as dependências 
 
