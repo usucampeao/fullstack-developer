@@ -1,0 +1,53 @@
+{   
+  "LOGIN": "Login", 
+  "LOGOUT": "Logout", 
+  "REGISTER": "Register",
+  "ACCOUNT": "Account",
+  "SUBMIT_PROPERTY": "Submit property",
+  "MENU": "Menu",
+  "MY_PROPERTIES": "My Properties",
+  "FAVORITES": "Favorites",
+  "COMPARE": "Compare",
+  "EDIT_PROFILE": "Edit Profile",
+  "LOCK_SCREEN": "Lock screen",
+  "HELP": "Help",
+  "NAV": {  
+    "HOME": "Home", 
+    "PROPERTIES": "Properties", 
+    "PAGES": "Pages", 
+    "AGENTS": "Agents",
+    "AGENT": "Agent", 
+    "FAQS": "Faqs",
+    "PRICING": "Pricing",
+    "TERMS_CONDITIONS": "Terms & Conditions",
+    "LANDING": "Landing", 
+    "404_PAGE": "404 Page",
+    "OTHERS": "Others",
+    "EXTERNAL_LINK": "External Link",
+    "MENU_ITEM": "Menu Item",
+    "CONTACT": "Contact",
+    "ABOUT_US": "About Us",
+    "ADMIN": "Admin"
+  }, 
+  "BTN": {
+    "ADD": "Add",
+    "SAVE": "Save",
+    "SUBMIT": "Submit",
+    "CANCEL": "Cancel",
+    "UPLOAD": "Upload",
+    "REMOVE": "Remove",
+    "YES": "Yes",
+    "NO": "No",
+    "OK": "OK",
+    "CLEAR": "Clear",
+    "ADVANCED": "Advanced",
+    "HIDE": "Hide"
+  },
+  "MESSAGE": {
+    "SURE_DELETE": "Are you sure you want to delete?",
+    "FILE_SIZE": "The file size cannot exceed {{param}} kb."
+  },
+  "FIELD": { 
+    "NAME": "Name" 
+  }
+}

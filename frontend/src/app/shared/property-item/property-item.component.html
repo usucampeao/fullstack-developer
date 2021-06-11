@@ -1,0 +1,72 @@
+<mat-card class="property-item p-0" [ngClass]="[viewType + '-item', 'column-' + column]"
+  [class.full-width-page]="fullWidthPage" fxLayout="row wrap">
+  <div fxFlex="100" fxShrink="3" [fxFlex.gt-sm]="viewType == 'list' ? 40 : 100"
+    [fxFlex.sm]="viewType == 'list' ? 50 : 100" class="thumbnail-section">
+    <div fxLayout="row wrap" class="property-status">
+      <span 
+        [style.background-color]="getStatusBgColor(status)">{{ property.status }}</span>
+    </div>
+
+    <div *ngIf="property.photo_url">
+      <img [src]="urlOriginal" />
+    </div>
+  </div>
+  <div fxFlex="100" [fxFlex.gt-sm]="viewType == 'list' ? 60 : 100" [fxFlex.sm]="viewType == 'list' ? 50 : 100"
+    class="p-3">
+    <div fxLayout="column" fxLayoutAlign="start stretch" class="h-100">
+      <mat-card-content class="mb-0">
+        <h1 class="title">
+          <a [routerLink]="['/properties', property.imovel_id]">{{
+            property.titulo
+          }}</a>
+        </h1>
+
+        <p fxLayout="row" class="address">
+          <mat-icon class="text-muted">location_on</mat-icon>
+          <span>{{ property.logradouro }}, {{ property.numero }}</span>
+        </p>
+
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div>
+            <h3 *ngIf="settings.currency == 'USD'" class="primary-color price">
+              <span *ngIf="property.valor">{{ property.valor }}</span>
+            </h3>
+          </div>
+          <app-rating [ratingsCount]="property.ratingsCount" [ratingsValue]="property.ratingsValue"></app-rating>
+        </div>
+
+        <div *ngIf="viewType == 'list' && fullWidthPage" fxShow="false" fxShow.gt-sm class="mt-3">
+          <p>{{ property.descricao }}</p>
+        </div>
+
+        <div class="features mt-3">
+          <p>
+            <span>Area</span><span>{{ property.area }} m2</span>
+          </p>
+          <p>
+            <span>Quartos</span><span>{{ property.quartos }}</span>
+          </p>
+          <p>
+            <span>Banheiros</span><span>{{property.banheiros ?? 0}}</span>
+          </p>
+          <p>
+            <span>Garagens</span><span>{{property.garagem ?? 0}}</span>
+          </p>
+        </div>
+      </mat-card-content>
+      <div class="sticky-footer-helper" fxFlex="grow"></div>
+      <mat-card-actions class="m-0 p-0" fxLayoutAlign="space-between center">
+        <p fxLayout="row" class="date mb-0">
+          <mat-icon class="text-muted">date_range</mat-icon>
+          <span class="mx-2">{{
+            property.imovel_post_date | date: "dd MMMM, yyyy"
+          }}</span>
+        </p>
+        <div>
+          <a [routerLink]="['/properties', property.imovel_id]" mat-stroked-button color="primary"
+            class="uppercase">Detalhes</a>
+        </div>
+      </mat-card-actions>
+    </div>
+  </div>
+</mat-card>

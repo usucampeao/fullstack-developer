@@ -1,0 +1,103 @@
+<div class="px-3">
+  <div class="theme-container">
+    <mat-sidenav-container class="single-property mt-3">
+      <mat-sidenav-content ngClass.gt-sm="distance">
+        <mat-card fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
+          <div>
+            <h2 class="uppercase" ngClass.xs="text-center">
+              {{ property?.titulo }}
+            </h2>
+            <p fxLayout="row" fxLayoutAlign.xs="center" class="address mb-0">
+              <mat-icon class="text-muted">location_on</mat-icon>
+              <span>{{ property?.logradouro }}, {{ property.numero }}</span>
+            </p>
+          </div>
+          <div fxLayout="column" fxLayoutAlign.xs="center center" class="mx-3">
+            <h2 class="primary-color price">
+              <span>{{ property?.valor }}</span>
+            </h2>
+            <!--app-rating [ratingsCount]="property?.ratingsCount" [ratingsValue]="property?.ratingsValue"></app-rating-->
+          </div>
+          <button *ngIf="!sidenavOpen" mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </mat-card>
+
+        <mat-card class="mt-3">
+          <div class="main-carousel mb-3">
+            <img [src]="urlOriginal" />
+          </div>
+        </mat-card>
+
+        <mat-card *ngIf="property" class="mt-3">
+          <mat-card-header fxLayoutAlign="center center">
+            <mat-card-title class="uppercase">detalhes</mat-card-title>
+          </mat-card-header>
+          <div fxLayout="row wrap" class="details">
+            <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+              <span>Tipo:</span>
+              <span>{{ property.tipo }}</span>
+            </div>
+            <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+              <span>Status:</span>
+              <div fxLayout="row wrap" class="list">
+                <span [class.list-item]="property.status" [class.last]="last">{{
+                  property.status
+                }}</span>
+              </div>
+            </div>
+            <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+              <span>Cidade:</span>
+              <span>{{ property.cidade }}</span>
+            </div>
+            <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+              <span>CEP:</span>
+              <span>{{ property.cep }}</span>
+            </div>
+            <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+              <span>Bairro:</span>
+              <div fxLayout="row wrap" class="list">
+                <span>{{ property.bairro }}</span>
+              </div>
+            </div>
+            <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+              <span>Logradouro:</span>
+              <div fxLayout="row wrap" class="list">
+                <span>{{ property.rua }}</span>
+              </div>
+            </div>
+            <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+              <span>Quartos:</span>
+              <span>{{ property.quartos }}</span>
+            </div>
+            <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+              <span>Banheiros:</span>
+              <span>{{ property.banheiros }}</span>
+            </div>
+            <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+              <span>Garagens:</span>
+              <span>{{ property.garagem }}</span>
+            </div>
+            <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+              <span>Area:</span>
+              <span>{{ property.area }} m2</span>
+            </div>
+            <div fxFlex="100" fxFlex.gt-xs="50" fxLayout="row" class="item">
+              <span>Ano de Construção:</span>
+              <span>{{ property.anoimovel }}</span>
+            </div>
+          </div>
+        </mat-card>
+
+        <mat-card class="mt-3">
+          <mat-card-header fxLayoutAlign="center center">
+            <mat-card-title class="uppercase"> descrição </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ property?.descricao }}</p>
+          </mat-card-content>
+        </mat-card>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>

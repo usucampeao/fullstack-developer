@@ -1,0 +1,35 @@
+<form [formGroup]="form" class="search-wrapper" [ngClass]="'variant-'+variant">
+
+    <div [fxLayout]="'row wrap'"> 
+
+        <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-2">
+            <mat-form-field [appearance]="getAppearance()" [floatLabel]="getFloatLabel()">
+                <mat-label>Tipo de Imóvel</mat-label> 
+                <mat-select placeholder="Selecione um Tipo" formControlName="propertyType">
+                    <mat-option *ngFor="let propertyType of propertyTypes" [value]="propertyType">
+                        {{propertyType.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-2">
+            <mat-form-field [appearance]="getAppearance()" [floatLabel]="getFloatLabel()">
+                <mat-label>Status do Imóvel</mat-label>
+                <mat-select placeholder="Selecione um Valor" formControlName="propertyStatus">
+                    <mat-option *ngFor="let propertyStatus of propertyStatuses" [value]="propertyStatus">
+                        {{propertyStatus.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>       
+
+    </div>
+  
+
+    <div fxLayout="row" fxLayoutAlign="center center" class="p-2">       
+      <button mat-raised-button color="warn" class="uppercase mx-1" (click)="reset()">{{ 'BTN.CLEAR' | translate }}</button>
+    </div>
+    
+
+</form>

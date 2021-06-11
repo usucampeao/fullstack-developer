@@ -1,0 +1,79 @@
+<div class="p-3">
+  <div class="theme-container">
+    <div fxLayout="row" fxLayoutAlign="center center" class="my-3">
+      <mat-card [style.max-width.px]="500">
+        <div fxLayout="column" fxLayoutAlign="center center" class="text-center">
+          <h1 class="uppercase">Registrar</h1>
+          <a mat-button routerLink="/login" color="accent" class="w-100">Já tem uma conta? Login!</a>
+        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit(registerForm.value)">
+          <mat-form-field appearance="outline" class="w-100 mt-2">
+            <mat-icon matPrefix class="mr-1 text-muted">person</mat-icon>
+            <mat-label>Nome Completo</mat-label>
+            <input matInput placeholder="Nome Completo" formControlName="fullName" required />
+            <mat-error *ngIf="registerForm.controls.username?.errors?.required">Nome  é requerido</mat-error>
+            <mat-error *ngIf="registerForm.controls.username?.hasError('minlength')">Nome precisa ter ao menos 6
+              caracteres</mat-error>
+  
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-100 mt-2">
+            <mat-icon matPrefix class="mr-1 text-muted">person</mat-icon>
+            <mat-label>Usuario</mat-label>
+            <input matInput placeholder="Usuário" formControlName="userName" required />
+            <mat-error *ngIf="registerForm.controls.username?.errors?.required">Nome do Usuário é requerido</mat-error>
+            <mat-error *ngIf="registerForm.controls.username?.hasError('minlength')">Usuário precisa ter ao menos 6
+              caracteres</mat-error>
+            <mat-error *ngIf="registerForm.controls.username?.errors?.usuarioExistente">Esse Usuário já existe no banco
+              de dados</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-100 mt-1">
+            <mat-icon matPrefix class="mr-1 text-muted">email</mat-icon>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email" required />
+            <mat-error *ngIf="registerForm.controls.email?.errors?.required">Email é requerido</mat-error>
+            <mat-error *ngIf="registerForm.controls.email?.hasError('invalidEmail')">Email Inválido</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-100 mt-1">
+            <mat-icon matPrefix class="mr-1 text-muted">lock</mat-icon>
+            <mat-label>Senha</mat-label>
+            <input matInput placeholder="Senha" formControlName="password" type="password" minlength="6" required
+              [type]="hide ? 'password' : 'text'" />
+            <mat-error *ngIf="registerForm.controls.password.errors?.required">Senha é requerida</mat-error>
+            <mat-error *ngIf="registerForm.controls.password.hasError('minlength')">Senha precisa ter no mínimo 6
+              caracteres</mat-error>
+            <button mat-icon-button matSuffix (click)="hide = !hide" type="button" class="text-muted">
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-100 mt-1">
+            <mat-icon matPrefix class="mr-1 text-muted">lock</mat-icon>
+            <mat-label>Confirma Senha</mat-label>
+            <input matInput placeholder="Digite novamente sua senha" formControlName="confirmPassword" type="password"
+              required [type]="hide ? 'password' : 'text'" />
+            <mat-error *ngIf="registerForm.controls.confirmPassword.errors?.required">Confirmação da senha é requerida
+            </mat-error>
+            <mat-error *ngIf="
+                registerForm.controls.confirmPassword.hasError(
+                  'mismatchedPasswords'
+                )
+              ">Senhas não conferem</mat-error>
+            <button mat-icon-button matSuffix (click)="hide = !hide" type="button" class="text-muted">
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+          <div class="text-center mt-2">
+            <button mat-raised-button color="accent" class="uppercase" type="submit">
+              Criar uma conta 
+            </button>
+          </div>
+        </form>
+        <div class="divider mt-4"></div>
+        <mat-card-actions fxLayoutAlign="center center" class="text-center">
+          <small class="my-3">Clicando em "Cria uma conta você concorda com nossos Termos e Condições "
+            <a mat-button href="https://usucampeao.com.br/wp-content/uploads/2021/02/Co%CC%81digo-de-conduta-Usucampea%CC%83o.pdf" color="primary" class="mx-2">Termos e condições</a>
+          </small>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<ng-container *ngFor="let menuItem of menuItems">
+
+  <a *ngIf="menuItem.routerLink && !menuItem.hasSubMenu" mat-button [routerLink]="[menuItem.routerLink]" 
+    routerLinkActive="horizontal-active-link" [routerLinkActiveOptions]="{exact:true}">
+    <span>{{ menuItem.title | translate }}</span>
+  </a>
+ 
+</ng-container>

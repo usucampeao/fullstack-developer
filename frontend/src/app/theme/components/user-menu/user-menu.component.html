@@ -1,0 +1,53 @@
+<div *ngIf="user$ | async as user">
+  <div *ngIf="user.name">
+    <a
+      mat-button
+      [matMenuTriggerFor]="userMenu"
+      #userMenuTrigger="matMenuTrigger"
+    >
+      <mat-icon class="mat-icon-sm">person</mat-icon>
+      <span fxShow="false" fxShow.gt-sm class="mx-1 uppercase">{{
+        "ACCOUNT" | translate
+      }}</span>
+      <mat-icon class="mat-icon-sm caret">arrow_drop_down</mat-icon>
+    </a>
+    <mat-menu
+      #userMenu="matMenu"
+      [overlapTrigger]="false"
+      xPosition="before"
+      class="app-menu-panel user-menu"
+    >
+      <span (mouseleave)="userMenuTrigger.closeMenu()">
+        <div fxLayout="row" fxLayoutAlign="start center" class="user-info">
+          <img
+            src="assets/images/others/user.jpg"
+            alt="user-image"
+            width="50"
+          />
+          <p class="m-0">
+            {{ user.name }} <br />
+            <small
+              ><i>{{ user.email }}</i></small
+            >
+          </p>
+        </div>
+
+        <div class="divider"></div>
+        <a mat-menu-item routerLink="/submit-property">
+          <mat-icon class="mat-icon-sm">add_circle</mat-icon>
+          <span>{{ "SUBMIT_PROPERTY" | translate }}</span>
+        </a>
+        <a mat-menu-item routerLink="/account/my-properties">
+          <mat-icon class="mat-icon-sm">home</mat-icon>
+          <span>{{ "MY_PROPERTIES" | translate }}</span>
+        </a>
+
+        <div class="divider"></div>
+        <a mat-menu-item (click)="logout()">
+          <mat-icon class="mat-icon-sm">power_settings_new</mat-icon>
+          <span>{{ "LOGOUT" | translate }}</span>
+        </a>
+      </span>
+    </mat-menu>
+  </div>
+</div>
