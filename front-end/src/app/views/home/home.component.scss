@@ -1,0 +1,67 @@
+.bar-top {
+    position: absolute;
+    top: 0;
+    z-index: 99;
+}
+
+.icon-style {
+    margin-right: 5px;
+    padding: 5px;
+}
+
+.paginate-box {
+    margin-top: 55px;
+}
+
+.box-loading {
+    min-height: 100%;
+    height: calc(100vh - 180px);
+}
+
+.box-content {
+    margin-top: 10px;
+    padding: 0.5%;
+}
+
+.box-card {
+    margin: 0.4%;
+}
+
+.space-box{
+    flex: 1 1 auto;
+}
+
+.button-add{
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+    z-index: 99;
+}
+
+.box-header {
+    justify-content: space-between;
+}
+
+.box-action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.box-description {
+    padding: 10px;
+}
+
+.box-address {
+    border-top: 1px solid rgba(255,255,255, 0.5);
+    border-bottom: 1px solid rgba(255,255,255, 0.5);
+    padding: 5px;
+}
+
+.chip-green {
+    background-color: #03a400;
+}
+
+.chip-blue-light {
+    background-color: #038dff;
+}
