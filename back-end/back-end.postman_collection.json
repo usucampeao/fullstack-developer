@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "5e5ec7f1-f569-47de-90aa-1b9a375bf072",
+		"name": "back-end",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Casa de 3 Quartos com 2 Suites\",\n    \"description\": \"Casa bem localizada no centro da cidade.\",\n    \"amount\": 2000.00,\n    \"area\": 453.00,\n    \"address\": \"Rua Sebastião Machado de Andrade\",\n    \"addressNumber\": \"154\",\n    \"complement\": \"Casa\",\n    \"district\": \"Residencial Andrade\",\n    \"city\": \"Pindamonhagaba\",\n    \"state\": \"SP\",\n    \"zipCode\": \"12402500\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}",
+					"host": [
+						"{{server}}"
+					]
+				},
+				"description": "Insert register DB"
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Casa de 3 Quartos com 2 Suites\",\n    \"description\": \"Casa bem localizada no centro da cidade.\",\n    \"amount\": 2000.00,\n    \"area\": 453.00,\n    \"address\": \"Rua Sebastião Machado de Andrade\",\n    \"addressNumber\": \"154\",\n    \"complement\": \"Casa\",\n    \"district\": \"Residencial Andrade\",\n    \"city\": \"Pindamonhagaba\",\n    \"state\": \"SP\",\n    \"zipCode\": \"12402500\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}",
+					"host": [
+						"{{server}}"
+					]
+				},
+				"description": "Insert register DB"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Casa de 3 Quartos com 2 Suites\",\n    \"description\": \"Casa bem localizada no centro da cidade.\",\n    \"amount\": 2000.00,\n    \"area\": 453.00,\n    \"address\": \"Rua Sebastião Machado de Andrade\",\n    \"addressNumber\": \"154\",\n    \"complement\": \"Casa\",\n    \"district\": \"Residencial Andrade\",\n    \"city\": \"Pindamonhagaba\",\n    \"state\": \"SP\",\n    \"zipCode\": \"12402500\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}",
+					"host": [
+						"{{server}}"
+					]
+				},
+				"description": "Insert register DB"
+			},
+			"response": []
+		},
+		{
+			"name": "SearchAddressZipCode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "ListImmobiles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"state\": \"\",\n   \"city\": \"\",\n   \"district\": \"\",\n   \"address\": \"\",\n   \"page\": 1,\n   \"limit\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/fetch",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"fetch"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

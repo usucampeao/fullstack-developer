@@ -1,0 +1,101 @@
+<h1 mat-dialog-title>Imóvel</h1>
+<div mat-dialog-content>
+    <form class="form-box" [formGroup]="immobileForm">
+        <mat-form-field class="form-field">
+            <mat-label>Titulo</mat-label>
+            <input 
+                matInput 
+                formControlName="title" 
+                name="title">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>Descrição</mat-label>
+            <textarea 
+                matInput 
+                formControlName="description" 
+                name="description"></textarea>
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>Valor do Imóvel</mat-label>
+            <input 
+                matInput 
+                formControlName="amount" 
+                name="amount">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>Área do Imóvel</mat-label>
+            <input 
+                matInput 
+                formControlName="area" 
+                name="area">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>CEP</mat-label>
+            <input 
+                matInput 
+                formControlName="zipCode" 
+                name="zipCode"
+                (blur)="searchAddress()">
+        </mat-form-field>
+        <mat-form-field *ngIf="loading" class="form-field">
+            <mat-progress-bar mode="query"></mat-progress-bar>
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>Endereço</mat-label>
+            <input matInput formControlName="address" name="address">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>Nº</mat-label>
+            <input matInput formControlName="addressNumber" name="address_number">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>Complemento</mat-label>
+            <input matInput formControlName="complement" name="complement">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>Bairro</mat-label>
+            <input matInput formControlName="district" name="district">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>Cidade</mat-label>
+            <input matInput formControlName="city" name="city">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>UF</mat-label>
+            <mat-select formControlName="state" name="state">
+                <mat-option value="AC">Acre</mat-option>
+                <mat-option value="AL">Alagoas</mat-option>
+                <mat-option value="AP">Amapá</mat-option>
+                <mat-option value="AM">Amazonas</mat-option>
+                <mat-option value="BA">Bahia</mat-option>
+                <mat-option value="CE">Ceará</mat-option>
+                <mat-option value="DF">Distrito Federal</mat-option>
+                <mat-option value="ES">Espírito Santo</mat-option>
+                <mat-option value="GO">Goiás</mat-option>
+                <mat-option value="MA">Maranhão</mat-option>
+                <mat-option value="MT">Mato Grosso</mat-option>
+                <mat-option value="MS">Mato Grosso do Sul</mat-option>
+                <mat-option value="MG">Minas Gerais</mat-option>
+                <mat-option value="PA">Pará</mat-option>
+                <mat-option value="PB">Paraíba</mat-option>
+                <mat-option value="PR">Paraná</mat-option>
+                <mat-option value="PE">Pernambuco</mat-option>
+                <mat-option value="PI">Piauí</mat-option>
+                <mat-option value="RJ">Rio de Janeiro</mat-option>
+                <mat-option value="RN">Rio Grande do Norte</mat-option>
+                <mat-option value="RS">Rio Grande do Sul</mat-option>
+                <mat-option value="RO">Rondônia</mat-option>
+                <mat-option value="RR">Roraima</mat-option>
+                <mat-option value="SC">Santa Catarina</mat-option>
+                <mat-option value="SP">São Paulo</mat-option>
+                <mat-option value="SE">Sergipe</mat-option>
+                <mat-option value="TO">Tocantins</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="saveImmobile()">Salvar</button>
+  <button mat-button (click)="close()">Cancelar</button>
+</div>

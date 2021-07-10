@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Detalhes do Imóvel - {{data.id}}</h1>
+<div mat-dialog-content class="box-content">
+    <h4 class="row">{{data.title}}</h4>
+    <p class="row">
+        <mat-chip-list>
+            <mat-chip class="chip-green">
+                R$ {{data.amount.toString().replace(".", ",")}}
+            </mat-chip>
+            <mat-chip class="chip-blue-light">
+                {{data.created_at | localDateTime}}
+            </mat-chip>
+        </mat-chip-list>
+    </p>
+    <p class="row">
+        {{data.description}}
+    </p>
+    <p class="row">
+        {{data.address}} {{data.address_number}},
+        {{data.district}}
+        {{data.city}}/{{data.state}} | {{data.zip_code}}
+    </p>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Cancelar</button>
+</div>

@@ -1,0 +1,82 @@
+<div fxLayout="column" fxLayoutAlign="start stretch" >
+
+    <mat-toolbar color="primary" class="bar-top">
+        <mat-toolbar-row>
+        <span>UsuImóveis</span>
+        <span class="space-box"></span>
+        <button mat-icon-button (click)="searchShowDialog()">
+            <mat-icon class="icon-style" aria-hidden="false" aria-label="">search</mat-icon>
+        </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-paginator [length]="paginate.total"
+               [pageSize]="paginate.per_page"
+               [pageSizeOptions]="[9,50,100]"
+               (page)="paginateImmobiles($event)"
+               class="paginate-box">
+    </mat-paginator>
+
+    <div *ngIf="loading" fxLayout="column stretch" fxLayoutAlign="center center" class="box-loading">
+        <mat-progress-bar mode="query"></mat-progress-bar>
+    </div>
+
+    <div *ngIf="!loading" fxLayout="row wrap" fxLayoutAlign="start space-between" class="box-content">
+
+        <ng-container *ngFor="let imo of immobiles" >
+
+            <mat-card class="box-card"
+                fxFlex="0 1 calc(33.3% - 11px)"
+                fxFlex.lt-md="0 1 calc(50% - 11px)"
+                fxFlex.lt-sm="100%">
+                <mat-card-header class="box-header">
+                    <mat-card-title>{{imo.title}}</mat-card-title>
+                    <mat-card-subtitle>
+                        <mat-chip-list>
+                            <mat-chip class="chip-green">
+                                R$ {{imo.amount.toString().replace(".", ",")}}
+                            </mat-chip>
+                            <mat-chip class="chip-blue-light">
+                                {{imo.created_at | localDateTime}}
+                            </mat-chip>
+                        </mat-chip-list>
+                    </mat-card-subtitle>
+                </mat-card-header>
+            
+                <mat-card-content>
+                    <p class="box-description">
+                        {{imo.description}}
+                    </p>
+                    <p class="box-address">
+                        {{imo.address}} {{imo.addressNumber}},
+                        {{imo.district}}
+                        {{imo.city}}/{{imo.state}}
+                    </p>
+                </mat-card-content>
+
+                <mat-card-actions class="box-action">
+                <button mat-icon-button aria-label="Visualizar Imovel" (click)="showImmobile(imo)">
+                    <mat-icon>visibility</mat-icon>
+                </button>
+                <button mat-icon-button aria-label="Editar Imovel" (click)="editImmobile(imo)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button aria-label="Remover Imovel" (click)="removeImmobile(imo.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                </mat-card-actions>
+          </mat-card>
+
+        </ng-container>
+
+    </div>
+
+    <button 
+        mat-fab color="primary" 
+        aria-label="Adicionar" 
+        class="button-add"
+        (click)="addImmobile()">
+        <mat-icon>note_add</mat-icon>
+    </button>
+
+</div>

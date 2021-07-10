@@ -1,0 +1,57 @@
+<h1 mat-dialog-title>Buscar Imóvel</h1>
+<div mat-dialog-content>
+        <mat-form-field class="form-field">
+            <mat-label>UF</mat-label>
+            <mat-select [(ngModel)]="data.state">
+                <mat-option value="AC">Acre</mat-option>
+                <mat-option value="AL">Alagoas</mat-option>
+                <mat-option value="AP">Amapá</mat-option>
+                <mat-option value="AM">Amazonas</mat-option>
+                <mat-option value="BA">Bahia</mat-option>
+                <mat-option value="CE">Ceará</mat-option>
+                <mat-option value="DF">Distrito Federal</mat-option>
+                <mat-option value="ES">Espírito Santo</mat-option>
+                <mat-option value="GO">Goiás</mat-option>
+                <mat-option value="MA">Maranhão</mat-option>
+                <mat-option value="MT">Mato Grosso</mat-option>
+                <mat-option value="MS">Mato Grosso do Sul</mat-option>
+                <mat-option value="MG">Minas Gerais</mat-option>
+                <mat-option value="PA">Pará</mat-option>
+                <mat-option value="PB">Paraíba</mat-option>
+                <mat-option value="PR">Paraná</mat-option>
+                <mat-option value="PE">Pernambuco</mat-option>
+                <mat-option value="PI">Piauí</mat-option>
+                <mat-option value="RJ">Rio de Janeiro</mat-option>
+                <mat-option value="RN">Rio Grande do Norte</mat-option>
+                <mat-option value="RS">Rio Grande do Sul</mat-option>
+                <mat-option value="RO">Rondônia</mat-option>
+                <mat-option value="RR">Roraima</mat-option>
+                <mat-option value="SC">Santa Catarina</mat-option>
+                <mat-option value="SP">São Paulo</mat-option>
+                <mat-option value="SE">Sergipe</mat-option>
+                <mat-option value="TO">Tocantins</mat-option>
+            </mat-select>
+        </mat-form-field> 
+        <mat-form-field class="form-field">
+            <mat-label>Cidade</mat-label>
+            <input 
+                matInput 
+                [(ngModel)]="data.city">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>Bairro</mat-label>
+            <input 
+                matInput 
+                [(ngModel)]="data.district">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>Endereço</mat-label>
+            <input 
+                matInput 
+                [(ngModel)]="data.address">
+        </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data">Buscar</button>
+  <button mat-button (click)="close()">Cancelar</button>
+</div>
